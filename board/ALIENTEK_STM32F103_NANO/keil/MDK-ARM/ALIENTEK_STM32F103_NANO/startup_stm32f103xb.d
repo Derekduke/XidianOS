@@ -1,0 +1,1 @@
+alientek_stm32f103_nano\startup_stm32f103xb.o: startup_stm32f103xb.s
