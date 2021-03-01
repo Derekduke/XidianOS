@@ -70,9 +70,9 @@ ALIGN(XD_ALIGN_SIZE)
 xd_uint8_t xd_led0_task_stack[512];
 xd_uint8_t xd_led1_task_stack[512];
 
-uint8_t RxBuff[1];      //进入中断接收数据的数�?
-uint8_t DataBuff[5000]; //保存接收到的数据的数�?
-int RxLine=0;           //接收到的数据长度
+uint8_t RxBuff[1];      
+uint8_t DataBuff[128]; 
+int RxLine=0;           
 
 void led0_task_entry(void *p_arg)
 {
@@ -306,20 +306,16 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
     RxLine++;                      
     DataBuff[RxLine-1]=RxBuff[0];  
-    xd_printf("%c" , RxBuff[0]);
+		xd_printf("%c" , RxBuff[0]);
     if(RxBuff[0]== '\r')            
     {
-			/*
-        xd_printf("RXLen=%d\r\n",RxLine); 
-        for(int i=0;i<RxLine;i++)
-					xd_printf("UART DataBuff[%d] = 0x%x\r\n",i,DataBuff[i]);                            
-        memset(DataBuff,0,sizeof(DataBuff));  
-        RxLine=0; 
-			*/
+			
+        //xd_printf("RXLen=%d\r\n",RxLine); 
+        //for(int i=0;i<RxLine;i++)
+				//	xd_printf("UART DataBuff[%d] = 0x%x\r\n",i,DataBuff[i]);                            
+        //memset(DataBuff,0,sizeof(DataBuff));  
+        RxLine=0; 		
 				shell_sig.update = 1;
-				xd_printf("\n\r");
-				xd_printf("==>");
-				
     }
     
     RxBuff[0]=0;

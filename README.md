@@ -8,9 +8,16 @@ A streamlined real-time operating system.
 
 ### 基于IMX6ULL
 
-## 移植指南
-## 组件清单
+## 架构支持
+初步计划支持以下架构：
+- [x] cortex-m3 
+- [ ] cortex-m4
+- [ ] cortex-m7
+- [ ] cortex-a (MMU)
+## 组件支持
 初步计划实现以下组件：
-* shell
-* tensorflow lite micro
-* lvgl
+- [x] shell
+- [x] tensorflow
+- [ ] lvgl
+
+## 移植指南

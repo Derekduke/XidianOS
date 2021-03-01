@@ -37,3 +37,4 @@ alientek_stm32f103_nano\shell.o: ..\..\..\..\arch\cortex-m3\cpuport.h
 alientek_stm32f103_nano\shell.o: ..\..\..\..\kernel\inc\service.h
 alientek_stm32f103_nano\shell.o: ..\..\..\..\kernel\inc\sig.h
 alientek_stm32f103_nano\shell.o: ..\..\..\..\components\shell\shell.h
+alientek_stm32f103_nano\shell.o: D:\software\Keil\ARM\ARMCC\Bin\..\include\string.h
