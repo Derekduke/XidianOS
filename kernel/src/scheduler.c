@@ -6,11 +6,6 @@
 
 #include <xd_k.h>
 
-extern xd_uint32_t xd_interrupt_to_thread;
-extern struct xd_task idle;
-extern struct xd_task xd_flag1_thread;
-extern struct xd_task xd_flag2_thread;
-
 xd_list_t xd_task_priority_table[XD_TASK_PRIORITY_MAX];
 xd_uint32_t xd_task_ready_priority_group;
 
@@ -36,9 +31,12 @@ void xd_system_scheduler_start(void)
 	register xd_uint32_t highest_ready_priority;
 	highest_ready_priority = xd_find_task(xd_task_ready_priority_group);
 	to_task = xd_list_entry(xd_task_priority_table[highest_ready_priority].next , struct xd_task , tlist);
+	to_task->stat = XD_TASK_RUNNING;
 	xd_current_task = to_task;
 	
 	kernel_state = 1;
+	xd_printf("\r\n XidianOS kernel running \n\r");
+	xd_printf("==>");
 	xd_context_switch_to((xd_uint32_t)&(to_task->sp));
 }
 
@@ -49,13 +47,16 @@ void xd_scheduler(void)
 	struct xd_task* to_task;
 	struct xd_task* from_task;
 	level = xd_interrupt_disable();
+	//xd_printf("priority group = %x\n" , xd_task_ready_priority_group);
 	highest_ready_priority = xd_find_task(xd_task_ready_priority_group);
 	to_task = xd_list_entry(xd_task_priority_table[highest_ready_priority].next , struct xd_task , tlist);
 	if(to_task != xd_current_task)
 	{
 		xd_current_priority = (xd_uint8_t)highest_ready_priority;
+		xd_current_task->stat = XD_TASK_SUSPEND;
 		from_task = xd_current_task;
 		xd_current_task = to_task;
+		xd_current_task->stat = XD_TASK_RUNNING;
 		xd_context_switch((xd_uint32_t)&from_task->sp , (xd_uint32_t)&to_task->sp);
 		xd_interrupt_enable(level);
 	}

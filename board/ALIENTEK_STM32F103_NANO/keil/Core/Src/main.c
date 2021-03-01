@@ -50,7 +50,7 @@ UART_HandleTypeDef huart1;
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
-static void MX_UART1_Init(void);
+static void MX_USART1_UART_Init(void);
 /* USER CODE BEGIN PFP */
 int fputc(int ch, FILE* stream)
 {
@@ -70,11 +70,16 @@ ALIGN(XD_ALIGN_SIZE)
 xd_uint8_t xd_led0_task_stack[512];
 xd_uint8_t xd_led1_task_stack[512];
 
+uint8_t RxBuff[1];      //进入中断接收数据的数�?
+uint8_t DataBuff[5000]; //保存接收到的数据的数�?
+int RxLine=0;           //接收到的数据长度
+
 void led0_task_entry(void *p_arg)
 {
 	for(;;)
 	{
-		printf("*** hello , task 1 ***\n");
+		xd_scheduler();
+		//xd_printf("task 1 running\n");
 		HAL_GPIO_WritePin(GPIOC, LED0_Pin, GPIO_PIN_RESET);
 		xd_task_delay(100);
 		HAL_GPIO_WritePin(GPIOC, LED0_Pin, GPIO_PIN_SET);
@@ -86,7 +91,7 @@ void led1_task_entry(void *p_arg)
 {
 	for(;;)
 	{
-		printf("*** hello , task 2 ***\n");
+		//xd_printf("task 2 running\n");
 		HAL_GPIO_WritePin(GPIOC, LED1_Pin, GPIO_PIN_RESET);
 		xd_task_delay(200);
 		HAL_GPIO_WritePin(GPIOC, LED1_Pin, GPIO_PIN_SET);
@@ -129,12 +134,14 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_UART1_Init();
+  MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
+	HAL_UART_Receive_IT(&huart1, (uint8_t *)RxBuff, 1); //打开串口中断接收
 	xd_interrupt_disable();
 	SysTick_Config(SystemCoreClock / XD_TICK_PER_SECOND);
 	xd_system_scheduler_init();
 	xd_task_idle_init();
+	xd_task_shell_init();
 
 	xd_task_init( 1,
 									&xd_led0_task,
@@ -142,7 +149,7 @@ int main(void)
 									XD_NULL,
 									&xd_led0_task_stack[0],
 									sizeof(xd_led0_task_stack),
-									0);
+									1);
 	xd_task_startup(&xd_led0_task);
 									
 	xd_task_init( 2,
@@ -151,9 +158,10 @@ int main(void)
 									XD_NULL,
 									&xd_led1_task_stack[0],
 									sizeof(xd_led1_task_stack),
-									1);
+									2);
 	xd_task_startup(&xd_led1_task);
 	
+
   xd_system_scheduler_start();									
   /* USER CODE END 2 */
 
@@ -204,6 +212,7 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
+  HAL_RCC_MCOConfig(RCC_MCO, RCC_MCO1SOURCE_PLLCLK, RCC_MCODIV_1);
 }
 
 /**
@@ -211,7 +220,7 @@ void SystemClock_Config(void)
   * @param None
   * @retval None
   */
-static void MX_UART1_Init(void)
+static void MX_USART1_UART_Init(void)
 {
 
   /* USER CODE BEGIN USART1_Init 0 */
@@ -227,6 +236,8 @@ static void MX_UART1_Init(void)
   huart1.Init.StopBits = UART_STOPBITS_1;
   huart1.Init.Parity = UART_PARITY_NONE;
   huart1.Init.Mode = UART_MODE_TX_RX;
+  huart1.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  huart1.Init.OverSampling = UART_OVERSAMPLING_16;
   if (HAL_UART_Init(&huart1) != HAL_OK)
   {
     Error_Handler();
@@ -247,8 +258,8 @@ static void MX_GPIO_Init(void)
   GPIO_InitTypeDef GPIO_InitStruct = {0};
 
   /* GPIO Ports Clock Enable */
-  __HAL_RCC_GPIOD_CLK_ENABLE();
   __HAL_RCC_GPIOC_CLK_ENABLE();
+  __HAL_RCC_GPIOD_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
@@ -260,6 +271,12 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : PA8 */
+  GPIO_InitStruct.Pin = GPIO_PIN_8;
+  GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
 }
 
@@ -277,6 +294,36 @@ void Error_Handler(void)
   /* User can add his own implementation to report the HAL error return state */
 
   /* USER CODE END Error_Handler_Debug */
+}
+#include <string.h>
+/* for shell need to do two task */
+/* 1.receive string*/
+/* 2.pass signal*/
+
+extern struct Signal shell_sig;
+
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+{
+    RxLine++;                      
+    DataBuff[RxLine-1]=RxBuff[0];  
+    xd_printf("%c" , RxBuff[0]);
+    if(RxBuff[0]== '\r')            
+    {
+			/*
+        xd_printf("RXLen=%d\r\n",RxLine); 
+        for(int i=0;i<RxLine;i++)
+					xd_printf("UART DataBuff[%d] = 0x%x\r\n",i,DataBuff[i]);                            
+        memset(DataBuff,0,sizeof(DataBuff));  
+        RxLine=0; 
+			*/
+				shell_sig.update = 1;
+				xd_printf("\n\r");
+				xd_printf("==>");
+				
+    }
+    
+    RxBuff[0]=0;
+    HAL_UART_Receive_IT(&huart1, (uint8_t *)RxBuff, 1); 
 }
 
 #ifdef  USE_FULL_ASSERT

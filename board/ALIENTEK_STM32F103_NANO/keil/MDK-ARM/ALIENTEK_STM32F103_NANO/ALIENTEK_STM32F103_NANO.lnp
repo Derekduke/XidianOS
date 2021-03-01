@@ -23,8 +23,11 @@
 "alientek_stm32f103_nano\list.o"
 "alientek_stm32f103_nano\scheduler.o"
 "alientek_stm32f103_nano\task.o"
+"alientek_stm32f103_nano\service.o"
+"alientek_stm32f103_nano\sig.o"
 "alientek_stm32f103_nano\context_rvds.o"
 "alientek_stm32f103_nano\cpuport.o"
+"alientek_stm32f103_nano\shell.o"
 --library_type=microlib --strict --scatter "ALIENTEK_STM32F103_NANO\ALIENTEK_STM32F103_NANO.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

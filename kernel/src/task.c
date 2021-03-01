@@ -72,10 +72,25 @@ xd_uint8_t xd_task_startup(struct xd_task* task)
 	task->number_mask = 1 << (task->current_priority);
 	task->stat = XD_TASK_SUSPEND;
 	xd_task_resume(task);
-	if(xd_current_task != XD_NULL)
+	//if(xd_current_task != XD_NULL)
+	//{
+//		xd_scheduler();
+	//}
+	return XD_EOK;
+}
+
+xd_uint8_t xd_task_suspend(struct xd_task* task)
+{
+	register xd_uint32_t level;
+	level = xd_interrupt_disable();
+	if((task->stat == XD_TASK_RUNNING) || (task->stat == XD_TASK_READY))
 	{
-		xd_scheduler();
+	xd_list_remove(&(task->tlist));
+	xd_task_ready_priority_group &= ~(task->number_mask);
+	//xd_printf("priority group = %x\n" , xd_task_ready_priority_group);
+	task->stat = XD_TASK_SUSPEND;
 	}
+	xd_interrupt_enable(level);
 	return XD_EOK;
 }
 
@@ -87,10 +102,10 @@ xd_uint8_t xd_task_resume(struct xd_task* task)
 		return XD_ERROR;
 	}
 	level = xd_interrupt_disable();
-	xd_list_remove(&(task->tlist));
-	xd_interrupt_enable(level);
-	xd_scheduler_insert_task(task);
+	//xd_list_remove(&(task->tlist));
 	
+	xd_scheduler_insert_task(task);
+	xd_interrupt_enable(level);
 	return XD_EOK;
 }    
 

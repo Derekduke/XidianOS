@@ -15,9 +15,10 @@ void xd_tick_increase(void)
     xd_uint32_t i;
     struct xd_task* task;
     xd_tick++;
+		xd_uint8_t res = signal_handler();
     for(i=0 ; i<XD_TASK_PRIORITY_MAX ; i++)
     {
-	    if(i==0 || i==1 || i==2)
+	    if(i==1 || i==2)
 			{
             task = xd_list_entry(xd_task_priority_table[i].next,
                                 struct xd_task,
@@ -25,13 +26,15 @@ void xd_tick_increase(void)
             if(task->remaining_tick > 0)
             {
                 task->remaining_tick --;
-		    }
-		    else if(task->remaining_tick == 0)
-		    {
-		        xd_task_ready_priority_group |= task->number_mask;
-		    }
+						}
+						else if(task->remaining_tick == 0)
+						{
+							xd_task_ready_priority_group |= task->number_mask;
+							//xd_task_resume(task);
+						}
         
-		}				
+			}				
     }
+		if(res == 1) return ;
     xd_scheduler();
 }

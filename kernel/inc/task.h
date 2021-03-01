@@ -42,6 +42,7 @@ void xd_task_idle_init(void);
 xd_uint8_t xd_task_startup(struct xd_task* task);
 xd_uint8_t xd_task_startup(struct xd_task* task);
 xd_uint8_t xd_task_resume(struct xd_task* task);
+xd_uint8_t xd_task_suspend(struct xd_task* task);
 void xd_task_delay(xd_uint32_t tick);
 												
 #endif
