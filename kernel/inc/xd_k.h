@@ -7,7 +7,6 @@
 #ifndef __XD_K_H_
 #define __XD_K_H_
 
-#include <stm32f1xx.h>
 
 #include <xd_def.h>
 #include <list.h>
@@ -20,6 +19,6 @@
 #include <sig.h>
 
 /*components*/
-#include <shell.h>
+#include "shell.h"
 
 #endif
