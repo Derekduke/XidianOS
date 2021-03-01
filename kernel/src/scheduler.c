@@ -33,10 +33,10 @@ void xd_system_scheduler_start(void)
 	to_task = xd_list_entry(xd_task_priority_table[highest_ready_priority].next , struct xd_task , tlist);
 	to_task->stat = XD_TASK_RUNNING;
 	xd_current_task = to_task;
-	
+
 	kernel_state = 1;
-	xd_printf("\r\n XidianOS kernel running \n\r");
-	xd_printf("==>");
+	// xd_printf("\r\n XidianOS kernel running \n\r");
+	// xd_printf("==>");
 	xd_context_switch_to((xd_uint32_t)&(to_task->sp));
 }
 
