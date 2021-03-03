@@ -1,13 +1,14 @@
 #include <xd_k.h>
 #include <string.h>
+#include <uart.h>
 
 #define TASK_SHELL_STACK_SIZE	512
 
 ALIGN(XD_ALIGN_SIZE)
 static xd_uint8_t xd_task_shell_stack[TASK_SHELL_STACK_SIZE];
-struct xd_task shell;
+struct xd_task shell_task;
 
-struct Signal shell_sig;
+struct semaphore shell_sem;
 extern uint8_t DataBuff[128];
 
 void xd_show_logo()
@@ -20,6 +21,7 @@ xd_printf("   > < | |/ _` | |/ _` | '_ \\| |  | |\\___ \\ \n\r");
 xd_printf("  / . \\| | (_| | | (_| | | | | |__| |____) |\n\r");
 xd_printf(" /_/ \\_\\_|\\__,_|_|\\__,_|_| |_|\\____/|_____/ \n\r");
 xd_printf("\n\r");
+xd_printf("==> ");
 }
 
 const SHELL_CommandTypeDef shellCommandList[]=
@@ -35,32 +37,29 @@ void xd_task_shell_entry(void* parameter)
 	while(1)
 	{
 		/*shell task start*/
-		//xd_printf("shell function\n\r");
+		xd_sem_take(&shell_sem , &shell_task);
 		shell_command();
 		xd_printf("\n\r");
-		xd_printf("==>");
+		xd_printf("==> ");
 		/*shell task end*/
-    	xd_task_suspend(&shell);
-		xd_scheduler();
 	}
 }
 void xd_task_shell_init(void)
 {
 	xd_task_init( 10,
-				&shell,
+				&shell_task,
 				xd_task_shell_entry,
 				XD_NULL,
 				&xd_task_shell_stack[0],
 				sizeof(xd_task_shell_stack),
 				0
         );									
-	shell.current_priority = shell.init_priority;
-	shell.number_mask = 1 << (shell.current_priority);
-	shell.stat = XD_TASK_SUSPEND;
-	signal_init(&shell , 0 , &shell_sig);
+	shell_task.current_priority = shell_task.init_priority;
+	shell_task.number_mask = 1 << (shell_task.current_priority);
+	shell_task.stat = XD_TASK_SUSPEND;
+	xd_sem_init(&shell_sem , "shell" , 0);
 	xd_show_logo();
-	//xd_task_resume(&shell);
-	xd_task_suspend(&shell);
+	xd_task_resume(&shell_task);
 }
 
 void shell_command()
@@ -93,7 +92,7 @@ void ps_func()
 
 void help_func()
 {
-	uint8_t count = sizeof(shellCommandList)/sizeof(SHELL_CommandTypeDef);
+	xd_uint8_t count = sizeof(shellCommandList)/sizeof(SHELL_CommandTypeDef);
 	xd_printf("\n\rCommands number: %d\n\r" , count);
     for(xd_uint8_t i=0 ; i<count; i++)
     {

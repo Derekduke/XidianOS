@@ -34,6 +34,6 @@ alientek_stm32f103_nano\scheduler.o: ..\..\..\..\kernel\inc\irq.h
 alientek_stm32f103_nano\scheduler.o: ..\..\..\..\kernel\inc\xd_k.h
 alientek_stm32f103_nano\scheduler.o: ..\..\..\..\kernel\inc\scheduler.h
 alientek_stm32f103_nano\scheduler.o: ..\..\..\..\arch\cortex-m3\cpuport.h
-alientek_stm32f103_nano\scheduler.o: ..\..\..\..\kernel\inc\service.h
 alientek_stm32f103_nano\scheduler.o: ..\..\..\..\kernel\inc\sig.h
+alientek_stm32f103_nano\scheduler.o: ..\..\..\..\kernel\inc\sem.h
 alientek_stm32f103_nano\scheduler.o: ..\..\..\..\components\shell\shell.h

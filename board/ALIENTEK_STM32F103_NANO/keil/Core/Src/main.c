@@ -24,6 +24,7 @@
 /* USER CODE BEGIN Includes */
 #include "stdio.h"
 #include <xd_k.h>
+#include <uart.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -299,9 +300,7 @@ void Error_Handler(void)
 /* for shell need to do two task */
 /* 1.receive string*/
 /* 2.pass signal*/
-
-extern struct Signal shell_sig;
-
+extern struct semaphore shell_sem;
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
     RxLine++;                      
@@ -315,7 +314,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 				//	xd_printf("UART DataBuff[%d] = 0x%x\r\n",i,DataBuff[i]);                            
         //memset(DataBuff,0,sizeof(DataBuff));  
         RxLine=0; 		
-				shell_sig.update = 1;
+        xd_sem_release(&shell_sem);
     }
     
     RxBuff[0]=0;
