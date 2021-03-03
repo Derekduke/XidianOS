@@ -12,11 +12,12 @@ A streamlined real-time operating system.
 初步计划支持以下架构：
 - [x] cortex-m3 
 - [ ] cortex-m4
-- [ ] cortex-m7
+- [x] cortex-m7
 - [ ] cortex-a (MMU)
 ## 组件支持
 初步计划实现以下组件：
 - [x] shell
+- [x] letter-shell
 - [x] tensorflow
 - [ ] lvgl
 
