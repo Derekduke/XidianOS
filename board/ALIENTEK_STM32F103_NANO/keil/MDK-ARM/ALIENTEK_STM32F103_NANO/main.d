@@ -40,4 +40,3 @@ alientek_stm32f103_nano\main.o: ..\..\..\..\kernel\inc\sig.h
 alientek_stm32f103_nano\main.o: ..\..\..\..\kernel\inc\sem.h
 alientek_stm32f103_nano\main.o: ..\..\..\..\components\shell\shell.h
 alientek_stm32f103_nano\main.o: ../Core/Inc/uart.h
-alientek_stm32f103_nano\main.o: D:\software\Keil\ARM\ARMCC\Bin\..\include\string.h

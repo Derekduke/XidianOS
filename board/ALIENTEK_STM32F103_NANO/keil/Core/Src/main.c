@@ -53,11 +53,6 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_USART1_UART_Init(void);
 /* USER CODE BEGIN PFP */
-int fputc(int ch, FILE* stream)
-{
-    HAL_UART_Transmit(&huart1, (uint8_t *)&ch, 1, 0xFFFF);
-    return ch;
-}
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -69,18 +64,14 @@ struct xd_task xd_led0_task;
 struct xd_task xd_led1_task;
 ALIGN(XD_ALIGN_SIZE)
 xd_uint8_t xd_led0_task_stack[512];
-xd_uint8_t xd_led1_task_stack[512];
-
-uint8_t RxBuff[1];      
-uint8_t DataBuff[128]; 
-int RxLine=0;           
+xd_uint8_t xd_led1_task_stack[512];         
+extern uint8_t RxBuff[1];
 
 void led0_task_entry(void *p_arg)
 {
 	for(;;)
 	{
 		xd_scheduler();
-		//xd_printf("task 1 running\n");
 		HAL_GPIO_WritePin(GPIOC, LED0_Pin, GPIO_PIN_RESET);
 		xd_task_delay(100);
 		HAL_GPIO_WritePin(GPIOC, LED0_Pin, GPIO_PIN_SET);
@@ -92,17 +83,11 @@ void led1_task_entry(void *p_arg)
 {
 	for(;;)
 	{
-		//xd_printf("task 2 running\n");
 		HAL_GPIO_WritePin(GPIOC, LED1_Pin, GPIO_PIN_RESET);
 		xd_task_delay(200);
 		HAL_GPIO_WritePin(GPIOC, LED1_Pin, GPIO_PIN_SET);
 		xd_task_delay(200);
 	}
-}
-
-void delay(uint32_t count)
-{
-	for(; count != 0 ; count--);
 }
 
 /* USER CODE END 0 */
@@ -295,30 +280,6 @@ void Error_Handler(void)
   /* User can add his own implementation to report the HAL error return state */
 
   /* USER CODE END Error_Handler_Debug */
-}
-#include <string.h>
-/* for shell need to do two task */
-/* 1.receive string*/
-/* 2.pass signal*/
-extern struct semaphore shell_sem;
-void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
-{
-    RxLine++;                      
-    DataBuff[RxLine-1]=RxBuff[0];  
-		xd_printf("%c" , RxBuff[0]);
-    if(RxBuff[0]== '\r')            
-    {
-			
-        //xd_printf("RXLen=%d\r\n",RxLine); 
-        //for(int i=0;i<RxLine;i++)
-				//	xd_printf("UART DataBuff[%d] = 0x%x\r\n",i,DataBuff[i]);                            
-        //memset(DataBuff,0,sizeof(DataBuff));  
-        RxLine=0; 		
-        xd_sem_release(&shell_sem);
-    }
-    
-    RxBuff[0]=0;
-    HAL_UART_Receive_IT(&huart1, (uint8_t *)RxBuff, 1); 
 }
 
 #ifdef  USE_FULL_ASSERT

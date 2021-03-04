@@ -1,9 +1,14 @@
 #include <xd_k.h>
 #include <stdarg.h>
 #include <stdio.h>
+#include <string.h>
 #include <uart.h>
 
 #define  CONSOLEBUF_SIZE 128
+
+uint8_t RxBuff[1];      
+uint8_t DataBuff[128]; 
+int RxLine=0;  
 
 extern UART_HandleTypeDef huart1;
 void xd_printf(const char* fmt , ...)
@@ -32,4 +37,20 @@ void xd_console_output(const char* str)
         HAL_UART_Transmit(&huart1 , (xd_uint8_t*)(str++) , 1 , 1000);
     }
     xd_interrupt_enable(level);
+}
+
+extern struct semaphore shell_sem;
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+{
+    RxLine++;                      
+    DataBuff[RxLine-1]=RxBuff[0];  
+		xd_printf("%c" , RxBuff[0]);
+    if(RxBuff[0]== '\r')            
+    { 
+        RxLine=0; 		
+        xd_sem_release(&shell_sem);
+    }
+    
+    RxBuff[0]=0;
+    HAL_UART_Receive_IT(&huart1, (uint8_t *)RxBuff, 1); 
 }
