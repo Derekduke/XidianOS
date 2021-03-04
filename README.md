@@ -15,7 +15,10 @@ A streamlined real-time operating system.
 
 ## 内核功能
 初步计划支持以下功能：
-
+- [x] 信号量
+- [ ] 互斥锁
+- [ ] 消息队列
+- [ ] 邮箱
 ## 架构支持
 初步计划支持以下架构：
 - [x] cortex-m3 
