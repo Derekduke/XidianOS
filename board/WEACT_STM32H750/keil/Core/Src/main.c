@@ -60,20 +60,11 @@ static void MX_USART1_UART_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-xd_uint8_t flag1 = 0;
-xd_uint8_t flag2 = 0;
-extern xd_list_t xd_task_priority_table[XD_TASK_PRIORITY_MAX];
-struct xd_task xd_led0_task;
-struct xd_task xd_led1_task;
+struct xd_task xd_led_task;
 ALIGN(XD_ALIGN_SIZE)
-xd_uint8_t xd_led0_task_stack[512];
-xd_uint8_t xd_led1_task_stack[512];
+xd_uint8_t xd_led_task_stack[512];
 
-// uint8_t RxBuff[1];      //进入中断接收数据的数�?
-// uint8_t DataBuff[5000]; //保存接收到的数据的数�?
-// int RxLine=0;           //接收到的数据长度
-
-void led0_task_entry(void *p_arg)
+void led_task_entry(void *p_arg)
 {
 	for(;;)
 	{
@@ -117,24 +108,24 @@ int main(void)
   MX_GPIO_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
-	HAL_UART_Receive_IT(&huart1, (uint8_t *)RxBuff, 1); //打开串口中断接收
+    uint8_t tempbuf = 0;
+	HAL_UART_Receive_IT(&huart1, &tempbuf, 1); //打开串口中断接收
 	xd_interrupt_disable();
 	SysTick_Config(SystemCoreClock / XD_TICK_PER_SECOND);
 	xd_system_scheduler_init();
 	xd_task_idle_init();
-	// xd_task_shell_init();
+    xd_show_version();
     userShellInit();
 
 	xd_task_init( 1,
-									&xd_led0_task,
-									led0_task_entry,
-									XD_NULL,
-									&xd_led0_task_stack[0],
-									sizeof(xd_led0_task_stack),
-									1);
-	xd_task_startup(&xd_led0_task);
+                &xd_led_task,
+                led_task_entry,
+                XD_NULL,
+                &xd_led_task_stack[0],
+                sizeof(xd_led_task_stack),
+                1);
+	xd_task_startup(&xd_led_task);
 
-    xd_printf("\r\n XidianOS kernel running \n\r");
     xd_system_scheduler_start();
   /* USER CODE END 2 */
 

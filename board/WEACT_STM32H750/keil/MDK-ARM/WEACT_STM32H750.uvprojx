@@ -559,11 +559,6 @@
               <FilePath>..\..\..\..\kernel\src\scheduler.c</FilePath>
             </File>
             <File>
-              <FileName>service.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\kernel\src\service.c</FilePath>
-            </File>
-            <File>
               <FileName>sig.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\..\..\kernel\src\sig.c</FilePath>
@@ -572,6 +567,16 @@
               <FileName>task.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\..\..\kernel\src\task.c</FilePath>
+            </File>
+            <File>
+              <FileName>sem.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\kernel\src\sem.c</FilePath>
+            </File>
+            <File>
+              <FileName>kservice.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\kernel\src\kservice.c</FilePath>
             </File>
           </Files>
         </Group>

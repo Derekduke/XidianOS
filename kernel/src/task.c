@@ -25,7 +25,7 @@ xd_uint8_t xd_task_init(xd_uint8_t num,
 		task->parameter = parameter;
 		task->stack_addr = stack_start;
 		task->stack_size = stack_size;
-		task->sp = 
+		task->sp =
 		(void*)xd_stack_init(task->entry,
 						task->parameter,
 		                (void*)((char*)task->stack_addr + task->stack_size - 4));
@@ -62,7 +62,7 @@ void xd_task_idle_init(void)
 				&xd_task_stack[0],
 				sizeof(xd_task_stack),
 				XD_TASK_PRIORITY_MAX-1
-                );									
+                );
 	xd_task_startup(&idle);
 }
 
@@ -103,17 +103,17 @@ xd_uint8_t xd_task_resume(struct xd_task* task)
 	}
 	level = xd_interrupt_disable();
 	//xd_list_remove(&(task->tlist));
-	
+
 	xd_scheduler_insert_task(task);
 	xd_interrupt_enable(level);
 	return XD_EOK;
-}    
+}
 
 void xd_task_delay(xd_uint32_t tick)
 {
 	register xd_uint32_t temp;
 	struct xd_task* task;
-	
+
 	temp = xd_interrupt_disable();
 	task = xd_current_task;
 	task->remaining_tick = tick;

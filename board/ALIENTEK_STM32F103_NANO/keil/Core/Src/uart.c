@@ -6,11 +6,18 @@
 
 #define  CONSOLEBUF_SIZE 128
 
-uint8_t RxBuff[1];      
-uint8_t DataBuff[128]; 
-int RxLine=0;  
+uint8_t RxBuff[1];
+uint8_t DataBuff[128];
+int RxLine=0;
 
 extern UART_HandleTypeDef huart1;
+
+void xd_kprint_port(const char *ch)
+{
+    HAL_UART_Transmit(&huart1, (uint8_t *)ch, 1, 0xFFFF);
+}
+
+
 void xd_printf(const char* fmt , ...)
 {
     va_list args;
@@ -42,15 +49,15 @@ void xd_console_output(const char* str)
 extern struct semaphore shell_sem;
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
-    RxLine++;                      
-    DataBuff[RxLine-1]=RxBuff[0];  
+    RxLine++;
+    DataBuff[RxLine-1]=RxBuff[0];
 		xd_printf("%c" , RxBuff[0]);
-    if(RxBuff[0]== '\r')            
-    { 
-        RxLine=0; 		
+    if(RxBuff[0]== '\r')
+    {
+        RxLine=0;
         xd_sem_release(&shell_sem);
     }
-    
+
     RxBuff[0]=0;
-    HAL_UART_Receive_IT(&huart1, (uint8_t *)RxBuff, 1); 
+    HAL_UART_Receive_IT(&huart1, (uint8_t *)RxBuff, 1);
 }

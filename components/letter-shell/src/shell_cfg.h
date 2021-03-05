@@ -145,7 +145,7 @@
 /**
  * @brief 是否在登录后清除命令行
  */
-#define     SHELL_CLS_WHEN_LOGIN        1
+#define     SHELL_CLS_WHEN_LOGIN        0
 
 /**
  * @brief shell默认用户

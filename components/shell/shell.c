@@ -14,7 +14,7 @@ extern uint8_t DataBuff[128];
 void xd_show_logo()
 {
 xd_printf("\n\r");
-xd_printf(" __   ___     _ _              ____   _____ \n\r"); 
+xd_printf(" __   ___     _ _              ____   _____ \n\r");
 xd_printf(" \\ \\ / (_)   | (_)            / __ \\ / ____|\n\r");
 xd_printf("  \\ V / _  __| |_  __ _ _ __ | |  | | (___  \n\r");
 xd_printf("   > < | |/ _` | |/ _` | '_ \\| |  | |\\___ \\ \n\r");
@@ -53,12 +53,12 @@ void xd_task_shell_init(void)
 				&xd_task_shell_stack[0],
 				sizeof(xd_task_shell_stack),
 				0
-        );									
+        );
 	shell_task.current_priority = shell_task.init_priority;
 	shell_task.number_mask = 1 << (shell_task.current_priority);
 	shell_task.stat = XD_TASK_SUSPEND;
 	xd_sem_init(&shell_sem , "shell" , 0);
-	xd_show_logo();
+	// xd_show_logo();
 	xd_task_resume(&shell_task);
 }
 
