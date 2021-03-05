@@ -1,7 +1,7 @@
 <!--
  * @Author: spaceman
  * @Date: 2021-03-01 17:08:09
- * @LastEditTime: 2021-03-05 18:10:19
+ * @LastEditTime: 2021-03-05 18:20:41
  * @LastEditors: spaceman
  * @Description:
  * @FilePath: \XidianOS\README.md
@@ -54,5 +54,6 @@ A streamlined real-time operating system.
 * 使用Cubemx工具，针对目标处理器和外设生成keil工程
 * 添加kernel目录下的.c文件及对应arch下的.c和.s文件，并指定编译所需的头文件路径
 * 自行实现uart.c中的串口打印函数以及中断处理函数
-* 在stm32xxx_it.c中在"void PendSV_Handler(void)"前添加 “__weak”
+* 需要根据具体硬件自己实现 `void xd_kprint_port(xd_uint8_t *ch)` 函数，该函数用于内核输出函数`void xd_kprintf(const char *fmt, ...)`
+* 在stm32xxx_it.c中在`void PendSV_Handler(void)`前添加`__weak`
 * 根据项目需要添加components下的组件
