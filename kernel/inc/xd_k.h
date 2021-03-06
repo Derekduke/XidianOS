@@ -7,7 +7,7 @@
 #ifndef __XD_K_H_
 #define __XD_K_H_
 
-#include <stm32f1xx.h>
+// #include <stm32f1xx.h>
 
 #include <xd_def.h>
 #include <list.h>
@@ -16,6 +16,7 @@
 #include <irq.h>
 #include <scheduler.h>
 #include <cpuport.h>
+#include <kservice.h>
 #include <sig.h>
 #include <sem.h>
 

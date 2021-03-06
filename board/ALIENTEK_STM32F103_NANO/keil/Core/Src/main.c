@@ -64,7 +64,7 @@ struct xd_task xd_led0_task;
 struct xd_task xd_led1_task;
 ALIGN(XD_ALIGN_SIZE)
 xd_uint8_t xd_led0_task_stack[512];
-xd_uint8_t xd_led1_task_stack[512];         
+xd_uint8_t xd_led1_task_stack[512];
 extern uint8_t RxBuff[1];
 
 void led0_task_entry(void *p_arg)
@@ -127,6 +127,7 @@ int main(void)
 	SysTick_Config(SystemCoreClock / XD_TICK_PER_SECOND);
 	xd_system_scheduler_init();
 	xd_task_idle_init();
+    xd_show_version();
 	xd_task_shell_init();
 
 	xd_task_init( 1,
@@ -137,7 +138,7 @@ int main(void)
 									sizeof(xd_led0_task_stack),
 									1);
 	xd_task_startup(&xd_led0_task);
-									
+
 	xd_task_init( 2,
 									&xd_led1_task,
 									led1_task_entry,
@@ -146,9 +147,9 @@ int main(void)
 									sizeof(xd_led1_task_stack),
 									2);
 	xd_task_startup(&xd_led1_task);
-	
 
-  xd_system_scheduler_start();									
+
+  xd_system_scheduler_start();
   /* USER CODE END 2 */
 
   /* Infinite loop */
