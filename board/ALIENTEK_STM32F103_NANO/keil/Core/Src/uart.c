@@ -6,8 +6,8 @@
 
 #define  CONSOLEBUF_SIZE 128
 
-uint8_t RxBuff[1];
-uint8_t DataBuff[128];
+//xd_uint8_t RxBuff[1];
+xd_uint8_t DataBuff[128];
 int RxLine=0;
 
 extern UART_HandleTypeDef huart1;

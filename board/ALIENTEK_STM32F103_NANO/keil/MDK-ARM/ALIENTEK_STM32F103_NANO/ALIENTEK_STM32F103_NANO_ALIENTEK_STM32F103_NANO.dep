@@ -1,7 +1,7 @@
 Dependencies for Project 'ALIENTEK_STM32F103_NANO', Target 'ALIENTEK_STM32F103_NANO': (DO NOT MODIFY !)
 CompilerVersion: 5060750::V5.06 update 6 (build 750)::.\ARMCC
 F (startup_stm32f103xb.s)(0x603FC0BA)(--cpu Cortex-M3 -g --apcs=interwork --pd "__MICROLIB SETA 1"-I.\RTE\_ALIENTEK_STM32F103_NANO-ID:\software\Keil\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\software\Keil\Keil\STM32F1xx_DFP\2.0.0\Device\Include--pd "__UVISION_VERSION SETA 530" --pd "_RTE_ SETA 1" --pd "STM32F10X_MD SETA 1" --pd "_RTE_ SETA 1"--list startup_stm32f103xb.lst --xref -o alientek_stm32f103_nano\startup_stm32f103xb.o --depend alientek_stm32f103_nano\startup_stm32f103xb.d)
-F (../Core/Src/main.c)(0x6040DA9D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\arch\cortex-m3 -I ..\..\..\..\kernel\inc -I ..\..\..\..\components\shell-I.\RTE\_ALIENTEK_STM32F103_NANO-ID:\software\Keil\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\software\Keil\Keil\STM32F1xx_DFP\2.0.0\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o alientek_stm32f103_nano\main.o --omf_browse alientek_stm32f103_nano\main.crf --depend alientek_stm32f103_nano\main.d)
+F (../Core/Src/main.c)(0x604318D1)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\arch\cortex-m3 -I ..\..\..\..\kernel\inc -I ..\..\..\..\components\shell-I.\RTE\_ALIENTEK_STM32F103_NANO-ID:\software\Keil\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\software\Keil\Keil\STM32F1xx_DFP\2.0.0\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o alientek_stm32f103_nano\main.o --omf_browse alientek_stm32f103_nano\main.crf --depend alientek_stm32f103_nano\main.d)
 I (../Core/Inc/main.h)(0x603FC0BA)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x603FC0BA)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x603FC0BA)
@@ -29,7 +29,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x603FC0BA)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x603FC0BA)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x603FC0BA)
 I (D:\software\Keil\ARM\ARMCC\include\stdio.h)(0x5E53505C)
-I (..\..\..\..\kernel\inc\xd_k.h)(0x603FC4D4)
+I (..\..\..\..\kernel\inc\xd_k.h)(0x6042FEE1)
 I (..\..\..\..\kernel\inc\xd_def.h)(0x603FC0BB)
 I (..\..\..\..\kernel\inc\list.h)(0x603FC0BB)
 I (..\..\..\..\kernel\inc\task.h)(0x603FC0BB)
@@ -37,10 +37,12 @@ I (..\..\..\..\kernel\inc\clock.h)(0x603FC0BB)
 I (..\..\..\..\kernel\inc\irq.h)(0x603FC0BB)
 I (..\..\..\..\kernel\inc\scheduler.h)(0x603FC0BB)
 I (..\..\..\..\arch\cortex-m3\cpuport.h)(0x603FC0BA)
+I (..\..\..\..\kernel\inc\kservice.h)(0x6042FEE1)
 I (..\..\..\..\kernel\inc\sig.h)(0x603FC0BB)
 I (..\..\..\..\kernel\inc\sem.h)(0x603FB52C)
 I (..\..\..\..\components\shell\shell.h)(0x603FC0BB)
-I (../Core/Inc/uart.h)(0x603A6B2A)
+I (../Core/Inc/uart.h)(0x60431825)
+I (D:\software\Keil\ARM\ARMCC\include\stdarg.h)(0x5E53505C)
 F (../Core/Src/stm32f1xx_it.c)(0x603FC0BA)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\arch\cortex-m3 -I ..\..\..\..\kernel\inc -I ..\..\..\..\components\shell-I.\RTE\_ALIENTEK_STM32F103_NANO-ID:\software\Keil\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\software\Keil\Keil\STM32F1xx_DFP\2.0.0\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o alientek_stm32f103_nano\stm32f1xx_it.o --omf_browse alientek_stm32f103_nano\stm32f1xx_it.crf --depend alientek_stm32f103_nano\stm32f1xx_it.d)
 I (../Core/Inc/main.h)(0x603FC0BA)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x603FC0BA)
@@ -69,7 +71,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x603FC0BA)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x603FC0BA)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x603FC0BA)
 I (../Core/Inc/stm32f1xx_it.h)(0x603FC0BA)
-I (..\..\..\..\kernel\inc\xd_k.h)(0x603FC4D4)
+I (..\..\..\..\kernel\inc\xd_k.h)(0x6042FEE1)
 I (..\..\..\..\kernel\inc\xd_def.h)(0x603FC0BB)
 I (..\..\..\..\kernel\inc\list.h)(0x603FC0BB)
 I (..\..\..\..\kernel\inc\task.h)(0x603FC0BB)
@@ -77,6 +79,7 @@ I (..\..\..\..\kernel\inc\clock.h)(0x603FC0BB)
 I (..\..\..\..\kernel\inc\irq.h)(0x603FC0BB)
 I (..\..\..\..\kernel\inc\scheduler.h)(0x603FC0BB)
 I (..\..\..\..\arch\cortex-m3\cpuport.h)(0x603FC0BA)
+I (..\..\..\..\kernel\inc\kservice.h)(0x6042FEE1)
 I (..\..\..\..\kernel\inc\sig.h)(0x603FC0BB)
 I (..\..\..\..\kernel\inc\sem.h)(0x603FB52C)
 I (..\..\..\..\components\shell\shell.h)(0x603FC0BB)
@@ -107,8 +110,28 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x603FC0BA)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x603FC0BA)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x603FC0BA)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x603FC0BA)
-F (..\Core\Src\uart.c)(0x6040D9CB)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\arch\cortex-m3 -I ..\..\..\..\kernel\inc -I ..\..\..\..\components\shell-I.\RTE\_ALIENTEK_STM32F103_NANO-ID:\software\Keil\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\software\Keil\Keil\STM32F1xx_DFP\2.0.0\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o alientek_stm32f103_nano\uart.o --omf_browse alientek_stm32f103_nano\uart.crf --depend alientek_stm32f103_nano\uart.d)
-I (..\..\..\..\kernel\inc\xd_k.h)(0x603FC4D4)
+F (..\Core\Src\uart.c)(0x604318D9)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\arch\cortex-m3 -I ..\..\..\..\kernel\inc -I ..\..\..\..\components\shell-I.\RTE\_ALIENTEK_STM32F103_NANO-ID:\software\Keil\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\software\Keil\Keil\STM32F1xx_DFP\2.0.0\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o alientek_stm32f103_nano\uart.o --omf_browse alientek_stm32f103_nano\uart.crf --depend alientek_stm32f103_nano\uart.d)
+I (..\..\..\..\kernel\inc\xd_k.h)(0x6042FEE1)
+I (..\..\..\..\kernel\inc\xd_def.h)(0x603FC0BB)
+I (..\..\..\..\kernel\inc\list.h)(0x603FC0BB)
+I (..\..\..\..\kernel\inc\task.h)(0x603FC0BB)
+I (..\..\..\..\kernel\inc\clock.h)(0x603FC0BB)
+I (..\..\..\..\kernel\inc\irq.h)(0x603FC0BB)
+I (..\..\..\..\kernel\inc\scheduler.h)(0x603FC0BB)
+I (..\..\..\..\arch\cortex-m3\cpuport.h)(0x603FC0BA)
+I (..\..\..\..\kernel\inc\kservice.h)(0x6042FEE1)
+I (..\..\..\..\kernel\inc\sig.h)(0x603FC0BB)
+I (..\..\..\..\kernel\inc\sem.h)(0x603FB52C)
+I (..\..\..\..\components\shell\shell.h)(0x603FC0BB)
+I (D:\software\Keil\ARM\ARMCC\include\stdarg.h)(0x5E53505C)
+I (D:\software\Keil\ARM\ARMCC\include\stdio.h)(0x5E53505C)
+I (D:\software\Keil\ARM\ARMCC\include\string.h)(0x5E53505C)
+I (../Core/Inc/uart.h)(0x60431825)
+I (../Core/Inc/main.h)(0x603FC0BA)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x603FC0BA)
+I (../Core/Inc/stm32f1xx_hal_conf.h)(0x603FC0BA)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x603FC0BA)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x603FC0BA)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x603FC0BA)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h)(0x603FC0BA)
 I (../Drivers/CMSIS/Include/core_cm3.h)(0x603FC0BA)
@@ -117,10 +140,6 @@ I (../Drivers/CMSIS/Include/cmsis_version.h)(0x603FC0BA)
 I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x603FC0BA)
 I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x603FC0BA)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x603FC0BA)
-I (../Core/Inc/stm32f1xx_hal_conf.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x603FC0BA)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x603FC0BA)
 I (D:\software\Keil\ARM\ARMCC\include\stddef.h)(0x5E53505C)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h)(0x603FC0BA)
@@ -134,20 +153,6 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x603FC0BA)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x603FC0BA)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x603FC0BA)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x603FC0BA)
-I (..\..\..\..\kernel\inc\xd_def.h)(0x603FC0BB)
-I (..\..\..\..\kernel\inc\list.h)(0x603FC0BB)
-I (..\..\..\..\kernel\inc\task.h)(0x603FC0BB)
-I (..\..\..\..\kernel\inc\clock.h)(0x603FC0BB)
-I (..\..\..\..\kernel\inc\irq.h)(0x603FC0BB)
-I (..\..\..\..\kernel\inc\scheduler.h)(0x603FC0BB)
-I (..\..\..\..\arch\cortex-m3\cpuport.h)(0x603FC0BA)
-I (..\..\..\..\kernel\inc\sig.h)(0x603FC0BB)
-I (..\..\..\..\kernel\inc\sem.h)(0x603FB52C)
-I (..\..\..\..\components\shell\shell.h)(0x603FC0BB)
-I (D:\software\Keil\ARM\ARMCC\include\stdarg.h)(0x5E53505C)
-I (D:\software\Keil\ARM\ARMCC\include\stdio.h)(0x5E53505C)
-I (D:\software\Keil\ARM\ARMCC\include\string.h)(0x5E53505C)
-I (../Core/Inc/uart.h)(0x603A6B2A)
 F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c)(0x603FC0BA)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\arch\cortex-m3 -I ..\..\..\..\kernel\inc -I ..\..\..\..\components\shell-I.\RTE\_ALIENTEK_STM32F103_NANO-ID:\software\Keil\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\software\Keil\Keil\STM32F1xx_DFP\2.0.0\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o alientek_stm32f103_nano\stm32f1xx_hal_gpio_ex.o --omf_browse alientek_stm32f103_nano\stm32f1xx_hal_gpio_ex.crf --depend alientek_stm32f103_nano\stm32f1xx_hal_gpio_ex.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x603FC0BA)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x603FC0BA)
@@ -538,33 +543,8 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x603FC0BA)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x603FC0BA)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x603FC0BA)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x603FC0BA)
-F (..\..\..\..\kernel\src\clock.c)(0x603FC0BB)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\arch\cortex-m3 -I ..\..\..\..\kernel\inc -I ..\..\..\..\components\shell-I.\RTE\_ALIENTEK_STM32F103_NANO-ID:\software\Keil\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\software\Keil\Keil\STM32F1xx_DFP\2.0.0\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o alientek_stm32f103_nano\clock.o --omf_browse alientek_stm32f103_nano\clock.crf --depend alientek_stm32f103_nano\clock.d)
-I (..\..\..\..\kernel\inc\xd_k.h)(0x603FC4D4)
-I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x603FC0BA)
-I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h)(0x603FC0BA)
-I (../Drivers/CMSIS/Include/core_cm3.h)(0x603FC0BA)
-I (D:\software\Keil\ARM\ARMCC\include\stdint.h)(0x5E53505C)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x603FC0BA)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x603FC0BA)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x603FC0BA)
-I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x603FC0BA)
-I (../Core/Inc/stm32f1xx_hal_conf.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x603FC0BA)
-I (D:\software\Keil\ARM\ARMCC\include\stddef.h)(0x5E53505C)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x603FC0BA)
+F (..\..\..\..\kernel\src\clock.c)(0x6042FEE1)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\arch\cortex-m3 -I ..\..\..\..\kernel\inc -I ..\..\..\..\components\shell-I.\RTE\_ALIENTEK_STM32F103_NANO-ID:\software\Keil\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\software\Keil\Keil\STM32F1xx_DFP\2.0.0\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o alientek_stm32f103_nano\clock.o --omf_browse alientek_stm32f103_nano\clock.crf --depend alientek_stm32f103_nano\clock.d)
+I (..\..\..\..\kernel\inc\xd_k.h)(0x6042FEE1)
 I (..\..\..\..\kernel\inc\xd_def.h)(0x603FC0BB)
 I (..\..\..\..\kernel\inc\list.h)(0x603FC0BB)
 I (..\..\..\..\kernel\inc\task.h)(0x603FC0BB)
@@ -572,73 +552,25 @@ I (..\..\..\..\kernel\inc\clock.h)(0x603FC0BB)
 I (..\..\..\..\kernel\inc\irq.h)(0x603FC0BB)
 I (..\..\..\..\kernel\inc\scheduler.h)(0x603FC0BB)
 I (..\..\..\..\arch\cortex-m3\cpuport.h)(0x603FC0BA)
+I (..\..\..\..\kernel\inc\kservice.h)(0x6042FEE1)
 I (..\..\..\..\kernel\inc\sig.h)(0x603FC0BB)
 I (..\..\..\..\kernel\inc\sem.h)(0x603FB52C)
 I (..\..\..\..\components\shell\shell.h)(0x603FC0BB)
 F (..\..\..\..\kernel\src\irq.c)(0x603FC0BB)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\arch\cortex-m3 -I ..\..\..\..\kernel\inc -I ..\..\..\..\components\shell-I.\RTE\_ALIENTEK_STM32F103_NANO-ID:\software\Keil\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\software\Keil\Keil\STM32F1xx_DFP\2.0.0\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o alientek_stm32f103_nano\irq.o --omf_browse alientek_stm32f103_nano\irq.crf --depend alientek_stm32f103_nano\irq.d)
 I (..\..\..\..\kernel\inc\irq.h)(0x603FC0BB)
-I (..\..\..\..\kernel\inc\xd_k.h)(0x603FC4D4)
-I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x603FC0BA)
-I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h)(0x603FC0BA)
-I (../Drivers/CMSIS/Include/core_cm3.h)(0x603FC0BA)
-I (D:\software\Keil\ARM\ARMCC\include\stdint.h)(0x5E53505C)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x603FC0BA)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x603FC0BA)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x603FC0BA)
-I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x603FC0BA)
-I (../Core/Inc/stm32f1xx_hal_conf.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x603FC0BA)
-I (D:\software\Keil\ARM\ARMCC\include\stddef.h)(0x5E53505C)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x603FC0BA)
+I (..\..\..\..\kernel\inc\xd_k.h)(0x6042FEE1)
 I (..\..\..\..\kernel\inc\xd_def.h)(0x603FC0BB)
 I (..\..\..\..\kernel\inc\list.h)(0x603FC0BB)
 I (..\..\..\..\kernel\inc\task.h)(0x603FC0BB)
 I (..\..\..\..\kernel\inc\clock.h)(0x603FC0BB)
 I (..\..\..\..\kernel\inc\scheduler.h)(0x603FC0BB)
 I (..\..\..\..\arch\cortex-m3\cpuport.h)(0x603FC0BA)
+I (..\..\..\..\kernel\inc\kservice.h)(0x6042FEE1)
 I (..\..\..\..\kernel\inc\sig.h)(0x603FC0BB)
 I (..\..\..\..\kernel\inc\sem.h)(0x603FB52C)
 I (..\..\..\..\components\shell\shell.h)(0x603FC0BB)
 F (..\..\..\..\kernel\src\list.c)(0x603FC0BB)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\arch\cortex-m3 -I ..\..\..\..\kernel\inc -I ..\..\..\..\components\shell-I.\RTE\_ALIENTEK_STM32F103_NANO-ID:\software\Keil\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\software\Keil\Keil\STM32F1xx_DFP\2.0.0\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o alientek_stm32f103_nano\list.o --omf_browse alientek_stm32f103_nano\list.crf --depend alientek_stm32f103_nano\list.d)
-I (..\..\..\..\kernel\inc\xd_k.h)(0x603FC4D4)
-I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x603FC0BA)
-I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h)(0x603FC0BA)
-I (../Drivers/CMSIS/Include/core_cm3.h)(0x603FC0BA)
-I (D:\software\Keil\ARM\ARMCC\include\stdint.h)(0x5E53505C)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x603FC0BA)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x603FC0BA)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x603FC0BA)
-I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x603FC0BA)
-I (../Core/Inc/stm32f1xx_hal_conf.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x603FC0BA)
-I (D:\software\Keil\ARM\ARMCC\include\stddef.h)(0x5E53505C)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x603FC0BA)
+I (..\..\..\..\kernel\inc\xd_k.h)(0x6042FEE1)
 I (..\..\..\..\kernel\inc\xd_def.h)(0x603FC0BB)
 I (..\..\..\..\kernel\inc\list.h)(0x603FC0BB)
 I (..\..\..\..\kernel\inc\task.h)(0x603FC0BB)
@@ -646,36 +578,12 @@ I (..\..\..\..\kernel\inc\clock.h)(0x603FC0BB)
 I (..\..\..\..\kernel\inc\irq.h)(0x603FC0BB)
 I (..\..\..\..\kernel\inc\scheduler.h)(0x603FC0BB)
 I (..\..\..\..\arch\cortex-m3\cpuport.h)(0x603FC0BA)
+I (..\..\..\..\kernel\inc\kservice.h)(0x6042FEE1)
 I (..\..\..\..\kernel\inc\sig.h)(0x603FC0BB)
 I (..\..\..\..\kernel\inc\sem.h)(0x603FB52C)
 I (..\..\..\..\components\shell\shell.h)(0x603FC0BB)
 F (..\..\..\..\kernel\src\scheduler.c)(0x603FC0BB)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\arch\cortex-m3 -I ..\..\..\..\kernel\inc -I ..\..\..\..\components\shell-I.\RTE\_ALIENTEK_STM32F103_NANO-ID:\software\Keil\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\software\Keil\Keil\STM32F1xx_DFP\2.0.0\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o alientek_stm32f103_nano\scheduler.o --omf_browse alientek_stm32f103_nano\scheduler.crf --depend alientek_stm32f103_nano\scheduler.d)
-I (..\..\..\..\kernel\inc\xd_k.h)(0x603FC4D4)
-I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x603FC0BA)
-I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h)(0x603FC0BA)
-I (../Drivers/CMSIS/Include/core_cm3.h)(0x603FC0BA)
-I (D:\software\Keil\ARM\ARMCC\include\stdint.h)(0x5E53505C)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x603FC0BA)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x603FC0BA)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x603FC0BA)
-I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x603FC0BA)
-I (../Core/Inc/stm32f1xx_hal_conf.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x603FC0BA)
-I (D:\software\Keil\ARM\ARMCC\include\stddef.h)(0x5E53505C)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x603FC0BA)
+I (..\..\..\..\kernel\inc\xd_k.h)(0x6042FEE1)
 I (..\..\..\..\kernel\inc\xd_def.h)(0x603FC0BB)
 I (..\..\..\..\kernel\inc\list.h)(0x603FC0BB)
 I (..\..\..\..\kernel\inc\task.h)(0x603FC0BB)
@@ -683,36 +591,12 @@ I (..\..\..\..\kernel\inc\clock.h)(0x603FC0BB)
 I (..\..\..\..\kernel\inc\irq.h)(0x603FC0BB)
 I (..\..\..\..\kernel\inc\scheduler.h)(0x603FC0BB)
 I (..\..\..\..\arch\cortex-m3\cpuport.h)(0x603FC0BA)
+I (..\..\..\..\kernel\inc\kservice.h)(0x6042FEE1)
 I (..\..\..\..\kernel\inc\sig.h)(0x603FC0BB)
 I (..\..\..\..\kernel\inc\sem.h)(0x603FB52C)
 I (..\..\..\..\components\shell\shell.h)(0x603FC0BB)
-F (..\..\..\..\kernel\src\task.c)(0x603FC0BB)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\arch\cortex-m3 -I ..\..\..\..\kernel\inc -I ..\..\..\..\components\shell-I.\RTE\_ALIENTEK_STM32F103_NANO-ID:\software\Keil\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\software\Keil\Keil\STM32F1xx_DFP\2.0.0\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o alientek_stm32f103_nano\task.o --omf_browse alientek_stm32f103_nano\task.crf --depend alientek_stm32f103_nano\task.d)
-I (..\..\..\..\kernel\inc\xd_k.h)(0x603FC4D4)
-I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x603FC0BA)
-I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h)(0x603FC0BA)
-I (../Drivers/CMSIS/Include/core_cm3.h)(0x603FC0BA)
-I (D:\software\Keil\ARM\ARMCC\include\stdint.h)(0x5E53505C)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x603FC0BA)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x603FC0BA)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x603FC0BA)
-I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x603FC0BA)
-I (../Core/Inc/stm32f1xx_hal_conf.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x603FC0BA)
-I (D:\software\Keil\ARM\ARMCC\include\stddef.h)(0x5E53505C)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x603FC0BA)
+F (..\..\..\..\kernel\src\task.c)(0x6042FEE1)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\arch\cortex-m3 -I ..\..\..\..\kernel\inc -I ..\..\..\..\components\shell-I.\RTE\_ALIENTEK_STM32F103_NANO-ID:\software\Keil\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\software\Keil\Keil\STM32F1xx_DFP\2.0.0\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o alientek_stm32f103_nano\task.o --omf_browse alientek_stm32f103_nano\task.crf --depend alientek_stm32f103_nano\task.d)
+I (..\..\..\..\kernel\inc\xd_k.h)(0x6042FEE1)
 I (..\..\..\..\kernel\inc\xd_def.h)(0x603FC0BB)
 I (..\..\..\..\kernel\inc\list.h)(0x603FC0BB)
 I (..\..\..\..\kernel\inc\task.h)(0x603FC0BB)
@@ -720,36 +604,12 @@ I (..\..\..\..\kernel\inc\clock.h)(0x603FC0BB)
 I (..\..\..\..\kernel\inc\irq.h)(0x603FC0BB)
 I (..\..\..\..\kernel\inc\scheduler.h)(0x603FC0BB)
 I (..\..\..\..\arch\cortex-m3\cpuport.h)(0x603FC0BA)
+I (..\..\..\..\kernel\inc\kservice.h)(0x6042FEE1)
 I (..\..\..\..\kernel\inc\sig.h)(0x603FC0BB)
 I (..\..\..\..\kernel\inc\sem.h)(0x603FB52C)
 I (..\..\..\..\components\shell\shell.h)(0x603FC0BB)
-F (..\..\..\..\kernel\src\sig.c)(0x603FC0BB)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\arch\cortex-m3 -I ..\..\..\..\kernel\inc -I ..\..\..\..\components\shell-I.\RTE\_ALIENTEK_STM32F103_NANO-ID:\software\Keil\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\software\Keil\Keil\STM32F1xx_DFP\2.0.0\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o alientek_stm32f103_nano\sig.o --omf_browse alientek_stm32f103_nano\sig.crf --depend alientek_stm32f103_nano\sig.d)
-I (..\..\..\..\kernel\inc\xd_k.h)(0x603FC4D4)
-I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x603FC0BA)
-I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h)(0x603FC0BA)
-I (../Drivers/CMSIS/Include/core_cm3.h)(0x603FC0BA)
-I (D:\software\Keil\ARM\ARMCC\include\stdint.h)(0x5E53505C)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x603FC0BA)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x603FC0BA)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x603FC0BA)
-I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x603FC0BA)
-I (../Core/Inc/stm32f1xx_hal_conf.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x603FC0BA)
-I (D:\software\Keil\ARM\ARMCC\include\stddef.h)(0x5E53505C)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x603FC0BA)
+F (..\..\..\..\kernel\src\sig.c)(0x6042FEE1)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\arch\cortex-m3 -I ..\..\..\..\kernel\inc -I ..\..\..\..\components\shell-I.\RTE\_ALIENTEK_STM32F103_NANO-ID:\software\Keil\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\software\Keil\Keil\STM32F1xx_DFP\2.0.0\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o alientek_stm32f103_nano\sig.o --omf_browse alientek_stm32f103_nano\sig.crf --depend alientek_stm32f103_nano\sig.d)
+I (..\..\..\..\kernel\inc\xd_k.h)(0x6042FEE1)
 I (..\..\..\..\kernel\inc\xd_def.h)(0x603FC0BB)
 I (..\..\..\..\kernel\inc\list.h)(0x603FC0BB)
 I (..\..\..\..\kernel\inc\task.h)(0x603FC0BB)
@@ -757,36 +617,12 @@ I (..\..\..\..\kernel\inc\clock.h)(0x603FC0BB)
 I (..\..\..\..\kernel\inc\irq.h)(0x603FC0BB)
 I (..\..\..\..\kernel\inc\scheduler.h)(0x603FC0BB)
 I (..\..\..\..\arch\cortex-m3\cpuport.h)(0x603FC0BA)
+I (..\..\..\..\kernel\inc\kservice.h)(0x6042FEE1)
 I (..\..\..\..\kernel\inc\sig.h)(0x603FC0BB)
 I (..\..\..\..\kernel\inc\sem.h)(0x603FB52C)
 I (..\..\..\..\components\shell\shell.h)(0x603FC0BB)
 F (..\..\..\..\kernel\src\sem.c)(0x603FBE07)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\arch\cortex-m3 -I ..\..\..\..\kernel\inc -I ..\..\..\..\components\shell-I.\RTE\_ALIENTEK_STM32F103_NANO-ID:\software\Keil\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\software\Keil\Keil\STM32F1xx_DFP\2.0.0\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o alientek_stm32f103_nano\sem.o --omf_browse alientek_stm32f103_nano\sem.crf --depend alientek_stm32f103_nano\sem.d)
-I (..\..\..\..\kernel\inc\xd_k.h)(0x603FC4D4)
-I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x603FC0BA)
-I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h)(0x603FC0BA)
-I (../Drivers/CMSIS/Include/core_cm3.h)(0x603FC0BA)
-I (D:\software\Keil\ARM\ARMCC\include\stdint.h)(0x5E53505C)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x603FC0BA)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x603FC0BA)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x603FC0BA)
-I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x603FC0BA)
-I (../Core/Inc/stm32f1xx_hal_conf.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x603FC0BA)
-I (D:\software\Keil\ARM\ARMCC\include\stddef.h)(0x5E53505C)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x603FC0BA)
+I (..\..\..\..\kernel\inc\xd_k.h)(0x6042FEE1)
 I (..\..\..\..\kernel\inc\xd_def.h)(0x603FC0BB)
 I (..\..\..\..\kernel\inc\list.h)(0x603FC0BB)
 I (..\..\..\..\kernel\inc\task.h)(0x603FC0BB)
@@ -794,6 +630,7 @@ I (..\..\..\..\kernel\inc\clock.h)(0x603FC0BB)
 I (..\..\..\..\kernel\inc\irq.h)(0x603FC0BB)
 I (..\..\..\..\kernel\inc\scheduler.h)(0x603FC0BB)
 I (..\..\..\..\arch\cortex-m3\cpuport.h)(0x603FC0BA)
+I (..\..\..\..\kernel\inc\kservice.h)(0x6042FEE1)
 I (..\..\..\..\kernel\inc\sig.h)(0x603FC0BB)
 I (..\..\..\..\kernel\inc\sem.h)(0x603FB52C)
 I (..\..\..\..\components\shell\shell.h)(0x603FC0BB)
@@ -801,32 +638,7 @@ I (D:\software\Keil\ARM\ARMCC\include\string.h)(0x5E53505C)
 I (D:\software\Keil\ARM\ARMCC\include\stdlib.h)(0x5E53505C)
 F (..\..\..\..\arch\cortex-m3\context_rvds.s)(0x603FC0BA)(--cpu Cortex-M3 -g --apcs=interwork --pd "__MICROLIB SETA 1"-I.\RTE\_ALIENTEK_STM32F103_NANO-ID:\software\Keil\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\software\Keil\Keil\STM32F1xx_DFP\2.0.0\Device\Include--pd "__UVISION_VERSION SETA 530" --pd "_RTE_ SETA 1" --pd "STM32F10X_MD SETA 1" --pd "_RTE_ SETA 1"--list context_rvds.lst --xref -o alientek_stm32f103_nano\context_rvds.o --depend alientek_stm32f103_nano\context_rvds.d)
 F (..\..\..\..\arch\cortex-m3\cpuport.c)(0x603FC0BA)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\arch\cortex-m3 -I ..\..\..\..\kernel\inc -I ..\..\..\..\components\shell-I.\RTE\_ALIENTEK_STM32F103_NANO-ID:\software\Keil\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\software\Keil\Keil\STM32F1xx_DFP\2.0.0\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o alientek_stm32f103_nano\cpuport.o --omf_browse alientek_stm32f103_nano\cpuport.crf --depend alientek_stm32f103_nano\cpuport.d)
-I (..\..\..\..\kernel\inc\xd_k.h)(0x603FC4D4)
-I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x603FC0BA)
-I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h)(0x603FC0BA)
-I (../Drivers/CMSIS/Include/core_cm3.h)(0x603FC0BA)
-I (D:\software\Keil\ARM\ARMCC\include\stdint.h)(0x5E53505C)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x603FC0BA)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x603FC0BA)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x603FC0BA)
-I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x603FC0BA)
-I (../Core/Inc/stm32f1xx_hal_conf.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x603FC0BA)
-I (D:\software\Keil\ARM\ARMCC\include\stddef.h)(0x5E53505C)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x603FC0BA)
+I (..\..\..\..\kernel\inc\xd_k.h)(0x6042FEE1)
 I (..\..\..\..\kernel\inc\xd_def.h)(0x603FC0BB)
 I (..\..\..\..\kernel\inc\list.h)(0x603FC0BB)
 I (..\..\..\..\kernel\inc\task.h)(0x603FC0BB)
@@ -834,36 +646,12 @@ I (..\..\..\..\kernel\inc\clock.h)(0x603FC0BB)
 I (..\..\..\..\kernel\inc\irq.h)(0x603FC0BB)
 I (..\..\..\..\kernel\inc\scheduler.h)(0x603FC0BB)
 I (..\..\..\..\arch\cortex-m3\cpuport.h)(0x603FC0BA)
+I (..\..\..\..\kernel\inc\kservice.h)(0x6042FEE1)
 I (..\..\..\..\kernel\inc\sig.h)(0x603FC0BB)
 I (..\..\..\..\kernel\inc\sem.h)(0x603FB52C)
 I (..\..\..\..\components\shell\shell.h)(0x603FC0BB)
-F (..\..\..\..\components\shell\shell.c)(0x603FC5DE)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\arch\cortex-m3 -I ..\..\..\..\kernel\inc -I ..\..\..\..\components\shell-I.\RTE\_ALIENTEK_STM32F103_NANO-ID:\software\Keil\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\software\Keil\Keil\STM32F1xx_DFP\2.0.0\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o alientek_stm32f103_nano\shell.o --omf_browse alientek_stm32f103_nano\shell.crf --depend alientek_stm32f103_nano\shell.d)
-I (..\..\..\..\kernel\inc\xd_k.h)(0x603FC4D4)
-I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x603FC0BA)
-I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h)(0x603FC0BA)
-I (../Drivers/CMSIS/Include/core_cm3.h)(0x603FC0BA)
-I (D:\software\Keil\ARM\ARMCC\include\stdint.h)(0x5E53505C)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x603FC0BA)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x603FC0BA)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x603FC0BA)
-I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x603FC0BA)
-I (../Core/Inc/stm32f1xx_hal_conf.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x603FC0BA)
-I (D:\software\Keil\ARM\ARMCC\include\stddef.h)(0x5E53505C)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x603FC0BA)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x603FC0BA)
+F (..\..\..\..\components\shell\shell.c)(0x6042FEE1)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\arch\cortex-m3 -I ..\..\..\..\kernel\inc -I ..\..\..\..\components\shell-I.\RTE\_ALIENTEK_STM32F103_NANO-ID:\software\Keil\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\software\Keil\Keil\STM32F1xx_DFP\2.0.0\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o alientek_stm32f103_nano\shell.o --omf_browse alientek_stm32f103_nano\shell.crf --depend alientek_stm32f103_nano\shell.d)
+I (..\..\..\..\kernel\inc\xd_k.h)(0x6042FEE1)
 I (..\..\..\..\kernel\inc\xd_def.h)(0x603FC0BB)
 I (..\..\..\..\kernel\inc\list.h)(0x603FC0BB)
 I (..\..\..\..\kernel\inc\task.h)(0x603FC0BB)
@@ -871,8 +659,37 @@ I (..\..\..\..\kernel\inc\clock.h)(0x603FC0BB)
 I (..\..\..\..\kernel\inc\irq.h)(0x603FC0BB)
 I (..\..\..\..\kernel\inc\scheduler.h)(0x603FC0BB)
 I (..\..\..\..\arch\cortex-m3\cpuport.h)(0x603FC0BA)
+I (..\..\..\..\kernel\inc\kservice.h)(0x6042FEE1)
 I (..\..\..\..\kernel\inc\sig.h)(0x603FC0BB)
 I (..\..\..\..\kernel\inc\sem.h)(0x603FB52C)
 I (..\..\..\..\components\shell\shell.h)(0x603FC0BB)
 I (D:\software\Keil\ARM\ARMCC\include\string.h)(0x5E53505C)
-I (../Core/Inc/uart.h)(0x603A6B2A)
+I (../Core/Inc/uart.h)(0x60431825)
+I (D:\software\Keil\ARM\ARMCC\include\stdarg.h)(0x5E53505C)
+I (D:\software\Keil\ARM\ARMCC\include\stdio.h)(0x5E53505C)
+I (../Core/Inc/main.h)(0x603FC0BA)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x603FC0BA)
+I (../Core/Inc/stm32f1xx_hal_conf.h)(0x603FC0BA)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x603FC0BA)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x603FC0BA)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x603FC0BA)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h)(0x603FC0BA)
+I (../Drivers/CMSIS/Include/core_cm3.h)(0x603FC0BA)
+I (D:\software\Keil\ARM\ARMCC\include\stdint.h)(0x5E53505C)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x603FC0BA)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x603FC0BA)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x603FC0BA)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x603FC0BA)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x603FC0BA)
+I (D:\software\Keil\ARM\ARMCC\include\stddef.h)(0x5E53505C)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h)(0x603FC0BA)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h)(0x603FC0BA)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h)(0x603FC0BA)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h)(0x603FC0BA)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h)(0x603FC0BA)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h)(0x603FC0BA)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x603FC0BA)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x603FC0BA)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x603FC0BA)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x603FC0BA)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x603FC0BA)

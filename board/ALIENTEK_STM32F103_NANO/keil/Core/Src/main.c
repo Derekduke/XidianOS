@@ -65,7 +65,7 @@ struct xd_task xd_led1_task;
 ALIGN(XD_ALIGN_SIZE)
 xd_uint8_t xd_led0_task_stack[512];
 xd_uint8_t xd_led1_task_stack[512];
-extern uint8_t RxBuff[1];
+xd_uint8_t RxBuff[1];
 
 void led0_task_entry(void *p_arg)
 {

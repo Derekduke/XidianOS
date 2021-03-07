@@ -35,6 +35,7 @@ A streamlined real-time operating system.
 - [ ] 互斥锁
 - [ ] 消息队列
 - [ ] 邮箱
+- [ ] 支持malloc
 ## 架构支持
 初步计划支持以下架构：
 - [x] cortex-m3
@@ -47,6 +48,17 @@ A streamlined real-time operating system.
 - [x] letter-shell
 - [x] tensorflow
 - [ ] lvgl
+
+## 修复BUG
+
+- [ ] 需添加时间片轮转机制
+- [ ] 需修改systick中处理延时的方式
+
+## 预期设想
+
+- [ ] 简洁的创建静态和动态线程的机制
+- [ ] 类似于fork的创建线程的机制
+- [ ] 对线程pid号进行管理的机制
 
 ## 移植指南
 

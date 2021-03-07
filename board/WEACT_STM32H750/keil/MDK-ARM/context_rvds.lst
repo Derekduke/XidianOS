@@ -225,11 +225,10 @@ ARM Macro Assembler    Page 4
               E000ED08 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M7.fp.dp --apcs=
 interwork --depend=weact_stm32h750\context_rvds.d -oweact_stm32h750\context_rvd
-s.o -I.\RTE\_WEACT_STM32H750 -ID:\Keil\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Inc
-lude -ID:\Keil\Arm\Packs\Keil\STM32H7xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32
-H7xx\Include --predefine="__UVISION_VERSION SETA 531" --predefine="_RTE_ SETA 1
-" --predefine="STM32H750xx SETA 1" --predefine="_RTE_ SETA 1" --list=context_rv
-ds.lst ..\..\..\..\arch\cortex-m7\context_rvds.s
+s.o -I.\RTE\_WEACT_STM32H750 -ID:\software\Keil\ARM\CMSIS\5.7.0\CMSIS\Core\Incl
+ude --predefine="__UVISION_VERSION SETA 530" --predefine="_RTE_ SETA 1" --prede
+fine="_RTE_ SETA 1" --list=context_rvds.lst ..\..\..\..\arch\cortex-m7\context_
+rvds.s
 
 
 
@@ -409,4 +408,4 @@ Symbol: xd_task_switch_interrupt_flag
       At line 133 in file ..\..\..\..\arch\cortex-m7\context_rvds.s
 
 3 symbols
-354 symbols in table
+353 symbols in table
