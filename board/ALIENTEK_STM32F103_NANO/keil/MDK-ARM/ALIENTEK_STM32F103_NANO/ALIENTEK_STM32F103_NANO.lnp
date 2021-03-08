@@ -26,6 +26,7 @@
 "alientek_stm32f103_nano\task.o"
 "alientek_stm32f103_nano\sig.o"
 "alientek_stm32f103_nano\sem.o"
+"alientek_stm32f103_nano\kservice.o"
 "alientek_stm32f103_nano\context_rvds.o"
 "alientek_stm32f103_nano\cpuport.o"
 "alientek_stm32f103_nano\shell.o"

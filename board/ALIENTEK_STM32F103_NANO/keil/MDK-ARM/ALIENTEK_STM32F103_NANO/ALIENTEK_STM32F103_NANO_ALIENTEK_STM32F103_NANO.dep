@@ -1,7 +1,7 @@
 Dependencies for Project 'ALIENTEK_STM32F103_NANO', Target 'ALIENTEK_STM32F103_NANO': (DO NOT MODIFY !)
 CompilerVersion: 5060750::V5.06 update 6 (build 750)::.\ARMCC
 F (startup_stm32f103xb.s)(0x603FC0BA)(--cpu Cortex-M3 -g --apcs=interwork --pd "__MICROLIB SETA 1"-I.\RTE\_ALIENTEK_STM32F103_NANO-ID:\software\Keil\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\software\Keil\Keil\STM32F1xx_DFP\2.0.0\Device\Include--pd "__UVISION_VERSION SETA 530" --pd "_RTE_ SETA 1" --pd "STM32F10X_MD SETA 1" --pd "_RTE_ SETA 1"--list startup_stm32f103xb.lst --xref -o alientek_stm32f103_nano\startup_stm32f103xb.o --depend alientek_stm32f103_nano\startup_stm32f103xb.d)
-F (../Core/Src/main.c)(0x604318D1)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\arch\cortex-m3 -I ..\..\..\..\kernel\inc -I ..\..\..\..\components\shell-I.\RTE\_ALIENTEK_STM32F103_NANO-ID:\software\Keil\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\software\Keil\Keil\STM32F1xx_DFP\2.0.0\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o alientek_stm32f103_nano\main.o --omf_browse alientek_stm32f103_nano\main.crf --depend alientek_stm32f103_nano\main.d)
+F (../Core/Src/main.c)(0x604584B5)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\arch\cortex-m3 -I ..\..\..\..\kernel\inc -I ..\..\..\..\components\shell-I.\RTE\_ALIENTEK_STM32F103_NANO-ID:\software\Keil\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\software\Keil\Keil\STM32F1xx_DFP\2.0.0\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o alientek_stm32f103_nano\main.o --omf_browse alientek_stm32f103_nano\main.crf --depend alientek_stm32f103_nano\main.d)
 I (../Core/Inc/main.h)(0x603FC0BA)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x603FC0BA)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x603FC0BA)
@@ -636,6 +636,21 @@ I (..\..\..\..\kernel\inc\sem.h)(0x603FB52C)
 I (..\..\..\..\components\shell\shell.h)(0x603FC0BB)
 I (D:\software\Keil\ARM\ARMCC\include\string.h)(0x5E53505C)
 I (D:\software\Keil\ARM\ARMCC\include\stdlib.h)(0x5E53505C)
+F (..\..\..\..\kernel\src\kservice.c)(0x6042FEE1)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\arch\cortex-m3 -I ..\..\..\..\kernel\inc -I ..\..\..\..\components\shell-I.\RTE\_ALIENTEK_STM32F103_NANO-ID:\software\Keil\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\software\Keil\Keil\STM32F1xx_DFP\2.0.0\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o alientek_stm32f103_nano\kservice.o --omf_browse alientek_stm32f103_nano\kservice.crf --depend alientek_stm32f103_nano\kservice.d)
+I (..\..\..\..\kernel\inc\kservice.h)(0x6042FEE1)
+I (..\..\..\..\kernel\inc\xd_k.h)(0x6042FEE1)
+I (..\..\..\..\kernel\inc\xd_def.h)(0x603FC0BB)
+I (..\..\..\..\kernel\inc\list.h)(0x603FC0BB)
+I (..\..\..\..\kernel\inc\task.h)(0x603FC0BB)
+I (..\..\..\..\kernel\inc\clock.h)(0x603FC0BB)
+I (..\..\..\..\kernel\inc\irq.h)(0x603FC0BB)
+I (..\..\..\..\kernel\inc\scheduler.h)(0x603FC0BB)
+I (..\..\..\..\arch\cortex-m3\cpuport.h)(0x603FC0BA)
+I (..\..\..\..\kernel\inc\sig.h)(0x603FC0BB)
+I (..\..\..\..\kernel\inc\sem.h)(0x603FB52C)
+I (..\..\..\..\components\shell\shell.h)(0x603FC0BB)
+I (D:\software\Keil\ARM\ARMCC\include\stdarg.h)(0x5E53505C)
+I (D:\software\Keil\ARM\ARMCC\include\stdio.h)(0x5E53505C)
 F (..\..\..\..\arch\cortex-m3\context_rvds.s)(0x603FC0BA)(--cpu Cortex-M3 -g --apcs=interwork --pd "__MICROLIB SETA 1"-I.\RTE\_ALIENTEK_STM32F103_NANO-ID:\software\Keil\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\software\Keil\Keil\STM32F1xx_DFP\2.0.0\Device\Include--pd "__UVISION_VERSION SETA 530" --pd "_RTE_ SETA 1" --pd "STM32F10X_MD SETA 1" --pd "_RTE_ SETA 1"--list context_rvds.lst --xref -o alientek_stm32f103_nano\context_rvds.o --depend alientek_stm32f103_nano\context_rvds.d)
 F (..\..\..\..\arch\cortex-m3\cpuport.c)(0x603FC0BA)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\..\..\..\arch\cortex-m3 -I ..\..\..\..\kernel\inc -I ..\..\..\..\components\shell-I.\RTE\_ALIENTEK_STM32F103_NANO-ID:\software\Keil\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\software\Keil\Keil\STM32F1xx_DFP\2.0.0\Device\Include-D__UVISION_VERSION="530" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o alientek_stm32f103_nano\cpuport.o --omf_browse alientek_stm32f103_nano\cpuport.crf --depend alientek_stm32f103_nano\cpuport.d)
 I (..\..\..\..\kernel\inc\xd_k.h)(0x6042FEE1)

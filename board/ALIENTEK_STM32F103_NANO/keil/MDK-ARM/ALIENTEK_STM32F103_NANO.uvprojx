@@ -538,6 +538,11 @@
               <FileType>1</FileType>
               <FilePath>..\..\..\..\kernel\src\sem.c</FilePath>
             </File>
+            <File>
+              <FileName>kservice.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\kernel\src\kservice.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

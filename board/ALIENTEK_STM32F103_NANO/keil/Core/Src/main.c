@@ -71,7 +71,6 @@ void led0_task_entry(void *p_arg)
 {
 	for(;;)
 	{
-		xd_scheduler();
 		HAL_GPIO_WritePin(GPIOC, LED0_Pin, GPIO_PIN_RESET);
 		xd_task_delay(100);
 		HAL_GPIO_WritePin(GPIOC, LED0_Pin, GPIO_PIN_SET);
@@ -127,7 +126,7 @@ int main(void)
 	SysTick_Config(SystemCoreClock / XD_TICK_PER_SECOND);
 	xd_system_scheduler_init();
 	xd_task_idle_init();
-    xd_show_version();
+  xd_show_version();
 	xd_task_shell_init();
 
 	xd_task_init( 1,
