@@ -15,19 +15,19 @@ A streamlined real-time operating system.
 ### 基于STM32F103
 打开XidianOS->board->ALIENTEK_STM32F103_NANO/keil下的工程
 
-编译下载程序至开发板中,可以看到两个LED灯以不同频率交替闪烁：
-![](./pic/stm32f103nano.jpg)
+编译下载程序至开发板中,可以看到三个LED灯以不同频率交替闪烁：
+<img src="./pic/stm32f103nano.jpg" style="zoom: 33%;" />
 
-并再观察串口助手（波特率15200），可以运行shell命令：
-![](pic/shell.png)
+并再观察串口助手（波特率115200），可以运行shell命令：
+<img src="pic/shell.png"  />
 
 ### 基于STM32H750
 
-![WeAct_stm32h750](./pic/WeAct_stm32h750.jpg)
+<img src="./pic/WeAct_stm32h750.jpg" alt="WeAct_stm32h750" style="zoom: 33%;" />
 
-打开XidianOS->board->WEACT_STM32H750/keil下的工程，编译下载程序至开发板中,可以看到LED灯一直在闪烁，再观察串口助手（波特率15200），可以运行shell命令：
+打开XidianOS->board->WEACT_STM32H750/keil下的工程，编译下载程序至开发板中,可以看到LED灯一直在闪烁，再观察串口助手（波特率115200），可以运行shell命令：
 
-![lettershell](pic/lettershell.png)
+<img src="pic/lettershell.png" alt="lettershell" style="zoom:80%;" />
 
 ## 内核功能
 初步计划支持以下功能：
