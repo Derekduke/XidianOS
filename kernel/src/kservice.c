@@ -15,6 +15,11 @@ __weak void xd_kprint_port(xd_uint8_t *ch)
     //You need to transplant the function
 }
 
+__weak void xd_ms_delay(xd_uint32_t time)
+{
+		//You need to transplant the function
+}
+
 static void __xd_kprint(const char *str)
 {
     xd_uint32_t level;
@@ -55,6 +60,6 @@ void xd_show_version(void)
     xd_kprintf("\r\n");
     xd_kprintf("Build:         "__DATE__" "__TIME__"\r\n");
     xd_kprintf("Version:       %d.%d.%d \r\n", XD_VERSION, XD_SUBVERSION, XD_REVISION);
-    xd_kprintf("Copyright:     (c) 2021 Letter\r\n");
+    xd_kprintf("Copyright:     (c) 2021 \r\n");
     xd_kprintf("\r\n");
 }

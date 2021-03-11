@@ -6,7 +6,6 @@
 
 #define  CONSOLEBUF_SIZE 128
 
-//xd_uint8_t RxBuff[1];
 xd_uint8_t DataBuff[128];
 int RxLine=0;
 

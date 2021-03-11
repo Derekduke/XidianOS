@@ -29,6 +29,7 @@ void xd_sem_take(xd_sem_t sem , struct xd_task* task)
     {
         xd_task_suspend(task);
         xd_list_insert_before(&(sem->sem_wait_task) , &(task->tlist));
+				task->stat = XD_TASK_SUSPEND;
         xd_scheduler();
     }
 		sem->value --;
@@ -37,8 +38,8 @@ void xd_sem_take(xd_sem_t sem , struct xd_task* task)
 void xd_sem_release(xd_sem_t sem)
 {   
     sem->value++;
-    xd_list_remove(sem->sem_wait_task.next);
 		struct xd_task* resume_task = xd_list_entry(sem->sem_wait_task.next , struct xd_task , tlist);
+		xd_list_remove(sem->sem_wait_task.next);
     xd_task_resume(resume_task);
     xd_scheduler();
 }

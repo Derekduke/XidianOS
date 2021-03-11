@@ -12,5 +12,6 @@ void xd_list_init(xd_list_t* l);
 void xd_list_insert_after(xd_list_t* l , xd_list_t* n);
 void xd_list_insert_before(xd_list_t* l , xd_list_t* n);
 void xd_list_remove(xd_list_t* n);
+xd_uint8_t xd_list_isempty(xd_list_t *l);
 
 #endif

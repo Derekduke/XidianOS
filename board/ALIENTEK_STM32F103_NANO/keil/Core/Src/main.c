@@ -57,24 +57,32 @@ static void MX_USART1_UART_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-xd_uint8_t flag1 = 0;
-xd_uint8_t flag2 = 0;
+//xd_uint8_t flag1 = 0;
+//xd_uint8_t flag2 = 0;
 extern xd_list_t xd_task_priority_table[XD_TASK_PRIORITY_MAX];
 struct xd_task xd_led0_task;
 struct xd_task xd_led1_task;
+struct xd_task xd_led2_task;
 ALIGN(XD_ALIGN_SIZE)
 xd_uint8_t xd_led0_task_stack[512];
 xd_uint8_t xd_led1_task_stack[512];
+xd_uint8_t xd_led2_task_stack[512];
 xd_uint8_t RxBuff[1];
+
+void xd_ms_delay(xd_uint32_t time)
+{
+		//You need to transplant the function
+		HAL_Delay(time);
+}
 
 void led0_task_entry(void *p_arg)
 {
 	for(;;)
 	{
 		HAL_GPIO_WritePin(GPIOC, LED0_Pin, GPIO_PIN_RESET);
-		xd_task_delay(100);
+		xd_ms_delay(100);
 		HAL_GPIO_WritePin(GPIOC, LED0_Pin, GPIO_PIN_SET);
-		xd_task_delay(100);
+		xd_ms_delay(100);
 	}
 }
 
@@ -83,8 +91,19 @@ void led1_task_entry(void *p_arg)
 	for(;;)
 	{
 		HAL_GPIO_WritePin(GPIOC, LED1_Pin, GPIO_PIN_RESET);
-		xd_task_delay(200);
+		xd_ms_delay(200);
 		HAL_GPIO_WritePin(GPIOC, LED1_Pin, GPIO_PIN_SET);
+		xd_ms_delay(200);
+	}
+}
+
+void led2_task_entry(void *p_arg)
+{
+	for(;;)
+	{
+		HAL_GPIO_WritePin(GPIOC, LED2_Pin, GPIO_PIN_RESET);
+		xd_task_delay(200);
+		HAL_GPIO_WritePin(GPIOC, LED2_Pin, GPIO_PIN_SET);
 		xd_task_delay(200);
 	}
 }
@@ -121,21 +140,21 @@ int main(void)
   MX_GPIO_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
-	HAL_UART_Receive_IT(&huart1, (uint8_t *)RxBuff, 1); //打开串口中断接收
+	HAL_UART_Receive_IT(&huart1, (xd_uint8_t *)RxBuff, 1); //打开串口中断接收
 	xd_interrupt_disable();
 	SysTick_Config(SystemCoreClock / XD_TICK_PER_SECOND);
+	xd_system_timer_init(); 
 	xd_system_scheduler_init();
 	xd_task_idle_init();
-  xd_show_version();
+  xd_show_logo();
 	xd_task_shell_init();
-
 	xd_task_init( 1,
 									&xd_led0_task,
 									led0_task_entry,
 									XD_NULL,
 									&xd_led0_task_stack[0],
 									sizeof(xd_led0_task_stack),
-									1);
+									2,50);
 	xd_task_startup(&xd_led0_task);
 
 	xd_task_init( 2,
@@ -144,10 +163,17 @@ int main(void)
 									XD_NULL,
 									&xd_led1_task_stack[0],
 									sizeof(xd_led1_task_stack),
-									2);
+									2,50);
 	xd_task_startup(&xd_led1_task);
 
-
+	xd_task_init( 3,
+									&xd_led2_task,
+									led2_task_entry,
+									XD_NULL,
+									&xd_led2_task_stack[0],
+									sizeof(xd_led2_task_stack),
+									1,0);
+	xd_task_startup(&xd_led2_task);
   xd_system_scheduler_start();
   /* USER CODE END 2 */
 
@@ -249,10 +275,10 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOA_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOC, LED0_Pin|LED1_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(GPIOC, LED0_Pin|LED1_Pin|LED2_Pin, GPIO_PIN_SET);
 
-  /*Configure GPIO pins : LED0_Pin LED1_Pin */
-  GPIO_InitStruct.Pin = LED0_Pin|LED1_Pin;
+  /*Configure GPIO pins : LED0_Pin LED1_Pin LED2_Pin */
+  GPIO_InitStruct.Pin = LED0_Pin|LED1_Pin|LED2_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;

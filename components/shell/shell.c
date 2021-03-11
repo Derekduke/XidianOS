@@ -11,17 +11,22 @@ struct xd_task shell_task;
 struct semaphore shell_sem;
 extern uint8_t DataBuff[128];
 
-void xd_show_logo()
+void xd_show_logo(void)
 {
-xd_printf("\n\r");
-xd_printf(" __   ___     _ _              ____   _____ \n\r");
-xd_printf(" \\ \\ / (_)   | (_)            / __ \\ / ____|\n\r");
-xd_printf("  \\ V / _  __| |_  __ _ _ __ | |  | | (___  \n\r");
-xd_printf("   > < | |/ _` | |/ _` | '_ \\| |  | |\\___ \\ \n\r");
-xd_printf("  / . \\| | (_| | | (_| | | | | |__| |____) |\n\r");
-xd_printf(" /_/ \\_\\_|\\__,_|_|\\__,_|_| |_|\\____/|_____/ \n\r");
-xd_printf("\n\r");
-xd_printf("==> ");
+    xd_kprintf("\033[2J\033[1H");//clear console
+    xd_kprintf("\r\n");
+    xd_kprintf(" __   ___     _ _              ____   _____ \r\n");
+    xd_kprintf(" \\ \\ / (_)   | (_)            / __ \\ / ____|\r\n");
+    xd_kprintf("  \\ V / _  __| |_  __ _ _ __ | |  | | (___  \r\n");
+    xd_kprintf("   > < | |/ _` | |/ _` | '_ \\| |  | |\\___ \\ \r\n");
+    xd_kprintf("  / . \\| | (_| | | (_| | | | | |__| |____) |\r\n");
+    xd_kprintf(" /_/ \\_\\_|\\__,_|_|\\__,_|_| |_|\\____/|_____/ \r\n");
+    xd_kprintf("\r\n");
+    xd_kprintf("Build:         "__DATE__" "__TIME__"\r\n");
+    xd_kprintf("Version:       %d.%d.%d \r\n", XD_VERSION, XD_SUBVERSION, XD_REVISION);
+    xd_kprintf("Copyright:     (c) 2021 \r\n");
+    xd_kprintf("\r\n");
+	xd_kprintf("==> ");
 }
 
 const SHELL_CommandTypeDef shellCommandList[]=
@@ -37,7 +42,7 @@ void xd_task_shell_entry(void* parameter)
 	while(1)
 	{
 		/*shell task start*/
-		xd_sem_take(&shell_sem , &shell_task);
+		xd_sem_take(&shell_sem , &shell_task);		
 		shell_command();
 		xd_printf("\n\r");
 		xd_printf("==> ");
@@ -52,13 +57,12 @@ void xd_task_shell_init(void)
 				XD_NULL,
 				&xd_task_shell_stack[0],
 				sizeof(xd_task_shell_stack),
-				0
+				0,0
         );
 	shell_task.current_priority = shell_task.init_priority;
 	shell_task.number_mask = 1 << (shell_task.current_priority);
 	shell_task.stat = XD_TASK_SUSPEND;
 	xd_sem_init(&shell_sem , "shell" , 0);
-	// xd_show_logo();
 	xd_task_resume(&shell_task);
 }
 
@@ -69,11 +73,9 @@ void shell_command()
 	while(DataBuff[i] != '\r')
 	{
 		s[i] = DataBuff[i];
-		//xd_printf("\n\rs[%d] = %c\n\r" , i , DataBuff[i]);
 		i++;
 	}
 	s[i] = '\0';
-	//xd_printf("\n\rs = %s\n\r" , s);
 	if(strcmp(s , "help") == 0)
 	{
 		help_func();

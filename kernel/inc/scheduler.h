@@ -10,6 +10,11 @@
 #include <xd_def.h>
 #include <task.h>
 
+struct priority_list
+{
+	xd_uint8_t member;
+};
+
 #define xd_container_of(ptr , type , member) \
 	((type*)((char*)(ptr)-(unsigned long)(&((type*)0)->member)))
 
@@ -25,5 +30,6 @@ void xd_scheduler_remove_task(struct xd_task* task);
 void xd_context_switch(xd_uint32_t from, xd_uint32_t to);
 void xd_context_switch_to(xd_uint32_t to);
 xd_uint8_t kernel_running(void);
+void update_priority_list(struct xd_task* task , xd_uint8_t flag);
 
 #endif	

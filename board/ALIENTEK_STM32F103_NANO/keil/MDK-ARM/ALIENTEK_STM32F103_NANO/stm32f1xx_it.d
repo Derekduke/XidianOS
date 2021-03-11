@@ -30,13 +30,12 @@ alientek_stm32f103_nano\stm32f1xx_it.o: ../Core/Inc/stm32f1xx_it.h
 alientek_stm32f103_nano\stm32f1xx_it.o: ..\..\..\..\kernel\inc\xd_k.h
 alientek_stm32f103_nano\stm32f1xx_it.o: ..\..\..\..\kernel\inc\xd_def.h
 alientek_stm32f103_nano\stm32f1xx_it.o: ..\..\..\..\kernel\inc\list.h
-alientek_stm32f103_nano\stm32f1xx_it.o: ..\..\..\..\kernel\inc\task.h
 alientek_stm32f103_nano\stm32f1xx_it.o: ..\..\..\..\kernel\inc\clock.h
+alientek_stm32f103_nano\stm32f1xx_it.o: ..\..\..\..\kernel\inc\task.h
 alientek_stm32f103_nano\stm32f1xx_it.o: ..\..\..\..\kernel\inc\irq.h
 alientek_stm32f103_nano\stm32f1xx_it.o: ..\..\..\..\kernel\inc\xd_k.h
 alientek_stm32f103_nano\stm32f1xx_it.o: ..\..\..\..\kernel\inc\scheduler.h
 alientek_stm32f103_nano\stm32f1xx_it.o: ..\..\..\..\arch\cortex-m3\cpuport.h
 alientek_stm32f103_nano\stm32f1xx_it.o: ..\..\..\..\kernel\inc\kservice.h
-alientek_stm32f103_nano\stm32f1xx_it.o: ..\..\..\..\kernel\inc\sig.h
 alientek_stm32f103_nano\stm32f1xx_it.o: ..\..\..\..\kernel\inc\sem.h
 alientek_stm32f103_nano\stm32f1xx_it.o: ..\..\..\..\components\shell\shell.h

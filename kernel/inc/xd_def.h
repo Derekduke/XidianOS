@@ -11,6 +11,8 @@
 #define XD_ALIGN_SIZE 4
 #define XD_TASK_PRIORITY_MAX 32
 #define XD_TICK_PER_SECOND 100
+#define XD_TIMER_NUMBER 1
+#define XD_TICK_MAX 0xffffffff
 
 /*type*/
 typedef signed char         xd_int8_t;

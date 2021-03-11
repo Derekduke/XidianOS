@@ -2,8 +2,8 @@ alientek_stm32f103_nano\sig.o: ..\..\..\..\kernel\src\sig.c
 alientek_stm32f103_nano\sig.o: ..\..\..\..\kernel\inc\xd_k.h
 alientek_stm32f103_nano\sig.o: ..\..\..\..\kernel\inc\xd_def.h
 alientek_stm32f103_nano\sig.o: ..\..\..\..\kernel\inc\list.h
-alientek_stm32f103_nano\sig.o: ..\..\..\..\kernel\inc\task.h
 alientek_stm32f103_nano\sig.o: ..\..\..\..\kernel\inc\clock.h
+alientek_stm32f103_nano\sig.o: ..\..\..\..\kernel\inc\task.h
 alientek_stm32f103_nano\sig.o: ..\..\..\..\kernel\inc\irq.h
 alientek_stm32f103_nano\sig.o: ..\..\..\..\kernel\inc\xd_k.h
 alientek_stm32f103_nano\sig.o: ..\..\..\..\kernel\inc\scheduler.h

@@ -30,14 +30,13 @@ alientek_stm32f103_nano\main.o: D:\software\Keil\ARM\ARMCC\Bin\..\include\stdio.
 alientek_stm32f103_nano\main.o: ..\..\..\..\kernel\inc\xd_k.h
 alientek_stm32f103_nano\main.o: ..\..\..\..\kernel\inc\xd_def.h
 alientek_stm32f103_nano\main.o: ..\..\..\..\kernel\inc\list.h
-alientek_stm32f103_nano\main.o: ..\..\..\..\kernel\inc\task.h
 alientek_stm32f103_nano\main.o: ..\..\..\..\kernel\inc\clock.h
+alientek_stm32f103_nano\main.o: ..\..\..\..\kernel\inc\task.h
 alientek_stm32f103_nano\main.o: ..\..\..\..\kernel\inc\irq.h
 alientek_stm32f103_nano\main.o: ..\..\..\..\kernel\inc\xd_k.h
 alientek_stm32f103_nano\main.o: ..\..\..\..\kernel\inc\scheduler.h
 alientek_stm32f103_nano\main.o: ..\..\..\..\arch\cortex-m3\cpuport.h
 alientek_stm32f103_nano\main.o: ..\..\..\..\kernel\inc\kservice.h
-alientek_stm32f103_nano\main.o: ..\..\..\..\kernel\inc\sig.h
 alientek_stm32f103_nano\main.o: ..\..\..\..\kernel\inc\sem.h
 alientek_stm32f103_nano\main.o: ..\..\..\..\components\shell\shell.h
 alientek_stm32f103_nano\main.o: ../Core/Inc/uart.h

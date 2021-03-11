@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F103xB</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc; ../Drivers/STM32F1xx_HAL_Driver/Inc; ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy; ../Drivers/CMSIS/Device/ST/STM32F1xx/Include; ../Drivers/CMSIS/Include; ..\..\..\..\arch\cortex-m3; ..\..\..\..\kernel\inc; ..\..\..\..\components\shell</IncludePath>
+              <IncludePath>../Core/Inc;  ../Drivers/STM32F1xx_HAL_Driver/Inc;  ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include;  ../Drivers/CMSIS/Include;  ..\..\..\..\arch\cortex-m3;  ..\..\..\..\kernel\inc;  ..\..\..\..\components\shell</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -394,6 +394,11 @@
           <GroupName>Application/User/Core</GroupName>
           <Files>
             <File>
+              <FileName>uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\Src\uart.c</FilePath>
+            </File>
+            <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Core/Src/main.c</FilePath>
@@ -407,11 +412,6 @@
               <FileName>stm32f1xx_hal_msp.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Core/Src/stm32f1xx_hal_msp.c</FilePath>
-            </File>
-            <File>
-              <FileName>uart.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Core\Src\uart.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -527,11 +527,6 @@
               <FileName>task.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\..\..\kernel\src\task.c</FilePath>
-            </File>
-            <File>
-              <FileName>sig.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\kernel\src\sig.c</FilePath>
             </File>
             <File>
               <FileName>sem.c</FileName>

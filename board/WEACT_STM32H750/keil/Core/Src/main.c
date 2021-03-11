@@ -108,14 +108,14 @@ int main(void)
   MX_GPIO_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
-    uint8_t tempbuf = 0;
+  xd_uint8_t tempbuf = 0;
 	HAL_UART_Receive_IT(&huart1, &tempbuf, 1); //打开串口中断接收
 	xd_interrupt_disable();
 	SysTick_Config(SystemCoreClock / XD_TICK_PER_SECOND);
 	xd_system_scheduler_init();
 	xd_task_idle_init();
-    xd_show_version();
-    userShellInit();
+  xd_show_version();
+   userShellInit();
 
 	xd_task_init( 1,
                 &xd_led_task,
@@ -123,7 +123,8 @@ int main(void)
                 XD_NULL,
                 &xd_led_task_stack[0],
                 sizeof(xd_led_task_stack),
-                1);
+                1
+                );
 	xd_task_startup(&xd_led_task);
 
     xd_system_scheduler_start();
