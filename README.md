@@ -47,12 +47,13 @@ A streamlined real-time operating system.
 - [x] shell
 - [x] letter-shell
 - [x] tensorflow
-- [ ] lvgl
+- [x] lvgl
 
 ## 修复BUG
 
-- [ ] 需添加时间片轮转机制
-- [ ] 需修改systick中处理延时的方式
+- [x] 需添加时间片轮转机制
+- [x] 添加定时器
+- [x] 需修改systick中处理延时的方式
 
 ## 预期设想
 
