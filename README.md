@@ -51,6 +51,7 @@ A streamlined real-time operating system.
 ## AI插件支持
 - [x] tensorflow-lite micro
 - [x] nnom
+- [x] onnx
 - [ ] microinfer
 ## 修复BUG
 
