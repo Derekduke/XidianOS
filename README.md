@@ -9,7 +9,7 @@
 # XidianOS
 A streamlined real-time operating system.
 
-西电OS操作系统是应用于微处理器上的一个小巧玲珑的操作系统，它可以根据具体的应用场景以去定制化功能，具有较强的可拓展性和可移植性。
+西电OS操作系统是应用于微处理器上的一个小巧玲珑的操作系统，它可以根据具体的应用场景以去定制化功能，具有较强的可拓展性和可移植性。同时具有一套面向AI模型的标准化框架，可对接多种AI后端推理方案，为用户提供统一的接口。
 
 ## 体验 XidianOS
 ### 基于STM32F103
@@ -48,7 +48,10 @@ A streamlined real-time operating system.
 - [x] letter-shell
 - [x] tensorflow
 - [x] lvgl
-
+## AI插件支持
+- [x] tensorflow-lite micro
+- [x] nnom
+- [ ] microinfer
 ## 修复BUG
 
 - [x] 需添加时间片轮转机制
