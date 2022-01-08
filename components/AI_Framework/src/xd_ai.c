@@ -20,7 +20,7 @@ xd_ai_t xd_ai_find(const char *name)
     return (xd_ai_t) core;
 }
 
-xd_uint32_t rt_ai_register(xd_ai_t ai, const char *name, int (*call)(void *arg), void *arg)
+xd_uint32_t xd_ai_register(xd_ai_t ai, const char *name, int (*call)(void *arg), void *arg)
 {
     if(ai == XD_NULL) return XD_ERROR;
     xd_kprintf("register model %s\n", name);
