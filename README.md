@@ -7,9 +7,30 @@
  * @FilePath: \XidianOS\README.md
 -->
 # XidianOS
-A streamlined real-time operating system.
+A micro-kernel operating system that is friendly to AI frameworks.
 
 西电OS操作系统是应用于微处理器上的一个小巧玲珑的操作系统，它可以根据具体的应用场景以去定制化功能，具有较强的可拓展性和可移植性。同时具有一套面向AI模型的标准化框架，可对接多种AI后端推理方案，为用户提供统一的接口。
+
+## AI Framework中间件
+作为一个可定制化的操作系统中间件，位于components目录下，若有使用需要可自行添加至工程目录中。
+
+AI Framework目的在为多种不同的神经网络推理后端提供统一的使用接口，只需要对应的插件就可以运行。其中使用Microinfer推理框架，可针对不同芯片平台和模型，一键式直接生成定制化的插件，让用户无需关注模型推理的底层实现。
+
+### API介绍：
+
+模型注册：  rt_ai_register
+
+模型查找：  xd_ai_find
+
+模型初始化： xd_ai_init
+
+模型运行：  xd_ai_run
+
+模型输出：  xd_ai_output
+
+### 示例：
+位于AI_Framework文件夹下的app.c展示了如何使用API去运行mnist模型
+
 
 ## 体验 XidianOS
 ### 基于STM32F103
@@ -52,7 +73,7 @@ A streamlined real-time operating system.
 - [x] tensorflow-lite micro
 - [x] nnom
 - [x] onnx
-- [ ] microinfer
+- [x] microinfer
 ## 修复BUG
 
 - [x] 需添加时间片轮转机制

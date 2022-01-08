@@ -1,5 +1,6 @@
-#ifndef __XD_AI_DEF__
-#define __XD_AI_DEF__
+#ifndef __XD_AI_DEF_H_
+#define __XD_AI_DEF_H_
+
 #include <xd_k.h>
 
 #define XD_AI_FLAG_INITED   0x01
@@ -26,6 +27,22 @@
 #define ENABLE_PERFORMANCE 0
 /* use struct rt_ai_record */
 #define XD_AI_USE_RECORD 1
+
+#define XD_AI_STATICIAL_TYPE(_type) (XD_AI_CLASS_STATIC | _type)
+#define XD_AI_IS_STATICIAL(_type)   (XD_AI_CLASS_STATIC & _type)
+#define XD_AI_MASK_STATICIAL(_type) ((~XD_AI_CLASS_STATIC) & _type)
+
+/*
+ * define object type info for the number of rt_ai_core_container items.
+ */
+enum xd_ai_obj_type
+{
+    XD_AI_CLASS_HANDLE = 0, /**< The type is a rt_ai. */
+    XD_AI_CLASS_UNKNOWN, /**< The object is unknown. */
+    XD_AI_CLASS_STATIC = 0X80, /** XD_AI STATICAL TYPE */
+    XD_AI_CLASS_STATIC_HANDLE   = XD_AI_STATICIAL_TYPE(XD_AI_CLASS_HANDLE),
+    XD_AI_CLASS_STATIC_UNKNOWN  = XD_AI_STATICIAL_TYPE(XD_AI_CLASS_UNKNOWN), /**< The type is a statical unknow. */
+};
 
 /**
  * Base structure of Kernel object

@@ -1,4 +1,5 @@
 #include <xd_ai.h>
+#include <xd_ai_core.h>
 
 #define ai_init     (ai->init)
 #define ai_input    (ai->get_input)
@@ -6,6 +7,28 @@
 #define ai_output   (ai->get_output)
 #define ai_get_info (ai->get_info)
 #define ai_config   (ai->config)
+
+xd_ai_t xd_ai_find(const char *name)
+{
+    if(name == XD_NULL) return XD_NULL;
+    xd_ai_core_t core = XD_NULL;
+    core = xd_ai_core_find(name, XD_AI_CLASS_HANDLE);
+    if(core == XD_NULL){
+        xd_kprintf("xd_ai_core_find return NULL %s,%d!\n",__FILE__,__LINE__);
+        return XD_NULL;
+    }
+    return (xd_ai_t) core;
+}
+
+xd_uint32_t rt_ai_register(xd_ai_t ai, const char *name, int (*call)(void *arg), void *arg)
+{
+    if(ai == XD_NULL) return XD_ERROR;
+    xd_kprintf("register model %s\n", name);
+    if(xd_ai_core_register(&(ai->parent),XD_AI_CLASS_STATIC_HANDLE,name) == XD_NULL){
+       xd_kprintf("rt_ai_core_register err!%s,%d\n",__FILE__,__LINE__);
+    }
+    return XD_EOK;
+}
 
 xd_uint32_t xd_ai_init(xd_ai_t ai, xd_uint8_t *work_buf)
 {

@@ -24,9 +24,11 @@
 
 #define  KPRINTF_BUFSIZE                128
 
-
+#define xd_list_for_each(pos, head) \
+    for (pos = (head)->next; pos != (head); pos = pos->next)
 
 void xd_kprintf(const char* fmt , ...);
 void xd_show_version(void);
+xd_int32_t xd_strncmp(const char *cs, const char *ct, xd_uint32_t count);
 
 #endif
