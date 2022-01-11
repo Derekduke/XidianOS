@@ -20,10 +20,6 @@ __weak void xd_ms_delay(xd_uint32_t time)
 		//You need to transplant the function
 }
 
-__weak xd_int32_t xd_strncmp(const char *cs, const char *ct, xd_uint32_t count)
-{
-		//You need to transplant the function
-}
 
 static void __xd_kprint(const char *str)
 {

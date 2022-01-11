@@ -139,11 +139,11 @@ void xd_task_yield(void)
     struct xd_task* task;
     level = xd_interrupt_disable();
     task = get_current_task();
-    if((task->stat == XD_TASK_RUNNING)&&(task->tlist.next != task->tlist.prev))
+    if((task->stat == XD_TASK_READY)&&(task->tlist.next != task->tlist.prev))
     {
         xd_list_remove(&(task->tlist));
         xd_list_insert_before(&(xd_task_priority_table[task->current_priority]) , &(task->tlist));  
-		task->stat = XD_TASK_READY;
+				task->stat = XD_TASK_READY;
 	}
     xd_interrupt_enable(level);
 	xd_scheduler();
